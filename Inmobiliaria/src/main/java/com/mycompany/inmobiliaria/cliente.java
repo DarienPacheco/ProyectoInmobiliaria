@@ -21,7 +21,9 @@ public class cliente{
         props.add(pp);
     
     }
-
+    
+    
+    
     public String getNombre() {
         return nombreCliente;
     }

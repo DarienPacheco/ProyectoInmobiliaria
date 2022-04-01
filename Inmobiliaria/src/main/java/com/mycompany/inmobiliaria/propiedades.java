@@ -8,8 +8,18 @@ public class propiedades{
     private String direccion;
     private int id;
     private int metrosCuadrados;
+    private int Piso;
     
-    
+    public propiedades (String precio, String numBanos, String numPiezas, String tipo, String direccion, String id, String metrosCuadrados, int piso){
+        this.precio = Integer.parseInt(precio);
+        this.numBanos = Integer.parseInt(numBanos);
+        this.numPiezas = Integer.parseInt(numPiezas);
+        this.tipo = tipo;
+        this.direccion = direccion;
+        this.id = Integer.parseInt(id);
+        this.metrosCuadrados = Integer.parseInt(metrosCuadrados);
+        this.Piso = piso;
+    }
     public propiedades (String precio, String numBanos, String numPiezas, String tipo, String direccion, String id, String metrosCuadrados){
         this.precio = Integer.parseInt(precio);
         this.numBanos = Integer.parseInt(numBanos);
@@ -20,6 +30,15 @@ public class propiedades{
         this.metrosCuadrados = Integer.parseInt(metrosCuadrados);
     }
 
+    
+    public void mostrar(int banos,int piezas, int metros){
+        System.out.println("Esta propiedad cuenta con " + banos + " baños, " + piezas + " piezas y con " + metros + " metros cuadrados.");
+    }
+    
+    public void mostrar(int banos,int piezas, int metros, int piso){
+        System.out.println("Esta propiedad cuenta con " + banos + " baños, " + piezas + " piezas, esta a " + piso + " por encima del primer piso y con " + metros + " metros cuadrados.");
+    }
+    
     public int getPrecio() {
         return precio;
     }
@@ -74,6 +93,14 @@ public class propiedades{
 
     public void setMetrosCuadrados(int metrosCuadrados) {
         this.metrosCuadrados = metrosCuadrados;
+    }
+
+    public int getPiso() {
+        return Piso;
+    }
+
+    public void setPiso(int Piso) {
+        this.Piso = Piso;
     }
     
     

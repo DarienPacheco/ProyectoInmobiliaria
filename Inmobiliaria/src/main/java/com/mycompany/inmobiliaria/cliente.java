@@ -72,6 +72,18 @@ public class cliente{
         this.passCliente = pass;
     }
     
-
+    public void mostrarPropiedades(){
+        propiedades pPivot;
+        int i = 0 ;
+        while(i < props.size()){
+            pPivot = props.get(i);
+            System.out.println("Id casa: " + pPivot.getId());
+            System.out.println("Precio: " + pPivot.getPrecio());
+            System.out.println("Piezas: "+ pPivot.getNumPiezas());
+            System.out.println("Baños: " + pPivot.getNumBanos());
+            System.out.println("Metros cuadrados: "+ pPivot.getMetrosCuadrados());
+            i++;
+        }
+    }
     
 } // Fin clase

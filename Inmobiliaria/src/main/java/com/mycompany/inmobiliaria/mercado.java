@@ -119,4 +119,23 @@ public class mercado{
         }
         return 0;
     }
+    
+    public int buscaPropietario(String rut){
+        cliente cPivot;
+        int i= 0;
+        boolean verificador = false;
+        while(i< vendedores.size()){
+            cPivot = vendedores.get(i);
+            if(rut.equals(cPivot.getRut())){
+                verificador = true;
+                return ( i +1 );
+            }else{
+                i++;
+            }
+        }
+        if(verificador == false){
+            System.out.println("El rut ingresado no pertenece a ningun propietario");
+        }
+        return 0;
+    }
 }

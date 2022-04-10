@@ -14,6 +14,7 @@ public class test {
         String transformador;
         int pivot;
         asesor aPivot;
+        cliente vPivot;
         
         while(opcion != 0){
             System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar: \n");
@@ -43,6 +44,18 @@ public class test {
                         pivot= pivot-1;
                         aPivot = Mercado.asesores.get(pivot);
                         aPivot.mostrarClientes();
+                        break;
+                    }
+                case 4:
+                    System.out.println("Favor ingrese el rut del propietario");
+                    transformador = lector.readLine();
+                    pivot = Mercado.buscaPropietario(transformador);
+                    if(pivot == 0){
+                        break;
+                    }else{
+                        pivot = pivot - 1 ;
+                        vPivot = Mercado.vendedores.get(pivot);
+                        vPivot.mostrarPropiedades();
                         break;
                     }
                 default:

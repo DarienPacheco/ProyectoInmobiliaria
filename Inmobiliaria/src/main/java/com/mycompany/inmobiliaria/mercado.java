@@ -29,14 +29,14 @@ public class mercado{
     public void busqueda(int i){
         if(mapaPropiedades.containsKey(i)){
             propiedades y = (propiedades) mapaPropiedades.get(i);
-            System.out.println("Su busqueda nos otorgo el siguiente resultado: \n");
-            System.out.println("Casa : " + y.getId() + "\n");
-            System.out.println("Habitaciones: " + y.getNumPiezas() + "\n");
-            System.out.println("Baños: " + y.getNumBanos() + "\n");
-            System.out.println("Area: " + y.getMetrosCuadrados() + "\n");
-            System.out.println("Precio: " + y.getPrecio() + "UF\n");
+            System.out.println("Su busqueda nos otorgo el siguiente resultado:");
+            System.out.println("Casa : " + y.getId());
+            System.out.println("Habitaciones: " + y.getNumPiezas());
+            System.out.println("Baños: " + y.getNumBanos());
+            System.out.println("Area: " + y.getMetrosCuadrados());
+            System.out.println("Precio: " + y.getPrecio() + "UF");
         }else{
-            System.out.println("La Casa que esta buscando no existe.\n");
+            System.out.println("La Casa que esta buscando no existe.");
         }
     }
     
@@ -48,22 +48,22 @@ public class mercado{
             propiedades y = (propiedades) mapaPropiedades.get(x);
             if(n){
                 if(i>= y.getPrecio()){
-                    System.out.println("Su busqueda nos otorgo el siguiente resultado: \n");
-                    System.out.println("Casa : " + y.getId() + "\n");
-                    System.out.println("Precio: " + y.getPrecio() + "UF\n");
-                    System.out.println("Habitaciones: " + y.getNumPiezas() + "\n");
-                    System.out.println("Baños: " + y.getNumBanos() + "\n");
-                    System.out.println("Area: " + y.getMetrosCuadrados() + "\n\n");   
+                    System.out.println("Su busqueda nos otorgo el siguiente resultado:");
+                    System.out.println("Casa : " + y.getId());
+                    System.out.println("Precio: " + y.getPrecio() + "UF");
+                    System.out.println("Habitaciones: " + y.getNumPiezas());
+                    System.out.println("Baños: " + y.getNumBanos());
+                    System.out.println("Area: " + y.getMetrosCuadrados());   
                     c = true;
                 }
             }else{
                 if(i<= y.getPrecio()){
-                    System.out.println("Su busqueda nos otorgo el siguiente resultado: \n");
-                    System.out.println("Casa : " + y.getId() + "\n");
-                    System.out.println("Precio: " + y.getPrecio() + "UF\n");
-                    System.out.println("Habitaciones: " + y.getNumPiezas() + "\n");
-                    System.out.println("Baños: " + y.getNumBanos() + "\n");
-                    System.out.println("Area: " + y.getMetrosCuadrados() + "\n\n");   
+                    System.out.println("Su busqueda nos otorgo el siguiente resultado: ");
+                    System.out.println("Casa : " + y.getId());
+                    System.out.println("Precio: " + y.getPrecio() + "UF");
+                    System.out.println("Habitaciones: " + y.getNumPiezas());
+                    System.out.println("Baños: " + y.getNumBanos());
+                    System.out.println("Area: " + y.getMetrosCuadrados());   
                     c = true;    
                 }
             }

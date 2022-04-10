@@ -11,5 +11,6 @@ public class test {
         
         casa.mostrar(3, 4, 435);
         casa.mostrar(3,4,2,534);
+        Mercado.busqueda(1);
     }
 }

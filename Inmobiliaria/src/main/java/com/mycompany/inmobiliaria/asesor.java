@@ -71,6 +71,17 @@ public class asesor{
         this.passAsesor = pass;
     }
     
-
+    public void mostrarClientes(){
+        cliente cPivot;
+        int i = 0 ;
+        while(i < aClientes.size()){
+            cPivot = aClientes.get(i);
+            System.out.println( "Nombre : " + cPivot.getNombre() );
+            System.out.println( "Rut : " + cPivot.getRut());
+            System.out.println( "Contacto : " + cPivot.getMail());
+            System.out.println("--------------------------------\n");
+            i++;
+        }
+    }
     
 } // Fin clase

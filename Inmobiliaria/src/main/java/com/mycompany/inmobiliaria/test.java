@@ -13,9 +13,9 @@ public class test {
         int opcion=10;
         String transformador;
         int pivot;
-        asesor aPivot = null;
-        cliente vPivot = null;
-        propiedades pPivot = null;
+        asesor aPivot ;
+        cliente vPivot ;
+        propiedades pPivot ;
         while(opcion != 0){
             System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar: \n");
             System.out.println("1. Mostrar Asesores");

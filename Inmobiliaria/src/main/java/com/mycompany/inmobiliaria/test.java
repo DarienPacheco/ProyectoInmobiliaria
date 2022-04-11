@@ -13,15 +13,19 @@ public class test {
         int opcion=10;
         String transformador;
         int pivot;
-        asesor aPivot;
-        cliente vPivot;
-        
+        asesor aPivot = null;
+        cliente vPivot = null;
+        propiedades pPivot = null;
         while(opcion != 0){
             System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar: \n");
             System.out.println("1. Mostrar Asesores");
             System.out.println("2. Mostrar Vendedores");
             System.out.println("3. Mostrar Clientes de un Asesor");
             System.out.println("4. Mostrar Propiedades de un Vendedor");
+            System.out.println("5. Agregar Asesores");
+            System.out.println("6. Agregar Vendedores");
+            System.out.println("7. Agregar Propiedad");
+            System.out.println("8. Agregar Clientes a un Asesor");
             System.out.println("0. Cerrar");
             transformador = lector.readLine();
             opcion = Integer.parseInt(transformador);
@@ -58,6 +62,23 @@ public class test {
                         vPivot.mostrarPropiedades();
                         break;
                     }
+                case 5:
+                    aPivot = Mercado.agregarAsesor();
+                    Mercado.asesores.add(aPivot);
+                case 6:
+                    vPivot = Mercado.agregarVendedores();
+                    Mercado.vendedores.add(vPivot);
+                case 7:
+                    System.out.println("1. Departamento");
+                    System.out.println("2. Casa");
+                    int option = Integer.parseInt(lector.readLine());
+                    switch(option){
+                        case 1:
+                            pPivot = Mercado.agregarPropiedad();
+                            Mercado.mapaPropiedades.put(pPivot.getId(), pPivot);
+                        //case 2 aun no se termina
+                    }
+                      
                 default:
                     System.out.println("El valor entregado no es valido."); 
                     break;

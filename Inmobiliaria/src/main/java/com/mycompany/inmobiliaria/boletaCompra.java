@@ -12,7 +12,6 @@ public class boletaCompra{
         this.idCasa = Integer.parseInt(idCasa);
         this.idVendedor = Integer.parseInt(idVendedor);
         this.idComprador = Integer.parseInt(idComprador);
-    
     }
 
     public int getPrecio() {

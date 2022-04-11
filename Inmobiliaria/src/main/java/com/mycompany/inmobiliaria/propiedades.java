@@ -1,5 +1,5 @@
 import java.io.* ;
-
+import java.util.concurrent.ThreadLocalRandom;
 public class propiedades{
     private int precio;
     private int numBanos;
@@ -83,8 +83,11 @@ public class propiedades{
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId() {
+        int numero = (int)(Math.random()*10000+1);
+        
+        this.id = numero;
+        
     }
 
     public int getMetrosCuadrados() {

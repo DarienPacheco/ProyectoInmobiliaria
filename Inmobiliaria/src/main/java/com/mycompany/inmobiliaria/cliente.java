@@ -44,8 +44,9 @@ public class cliente{
         return idCliente;
     }
 
-    public void setId(int id) {
-        this.idCliente = id;
+    public void setId() {
+        int numero = (int)(Math.random()*10000+1);
+        this.idCliente = numero;
     }
 
     public int getTelefono() {

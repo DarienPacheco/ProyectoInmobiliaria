@@ -22,6 +22,7 @@ public class asesor{
         this.passAsesor = pass;
         aClientes.add(cc);
     }
+    
 
     public String getNombre() {
         return nombreAsesor;

@@ -2,7 +2,7 @@ package com.mycompany.inmobiliaria;
 
 import java.io.* ;
 import java.util.concurrent.ThreadLocalRandom;
-public class propiedades{
+public class Propiedades{
     private int precio;
     private int numBanos;
     private int numPiezas;
@@ -12,7 +12,7 @@ public class propiedades{
     private int metrosCuadrados;
     private int Piso;
     
-    public propiedades (String precio, String numBanos, String numPiezas, String tipo, String direccion, String id, String metrosCuadrados, int piso){
+    public Propiedades (String precio, String numBanos, String numPiezas, String tipo, String direccion, String id, String metrosCuadrados, int piso){
         this.precio = Integer.parseInt(precio);
         this.numBanos = Integer.parseInt(numBanos);
         this.numPiezas = Integer.parseInt(numPiezas);
@@ -22,7 +22,7 @@ public class propiedades{
         this.metrosCuadrados = Integer.parseInt(metrosCuadrados);
         this.Piso = piso;
     }
-    public propiedades (String precio, String numBanos, String numPiezas, String tipo, String direccion, String id, String metrosCuadrados){
+    public Propiedades (String precio, String numBanos, String numPiezas, String tipo, String direccion, String id, String metrosCuadrados){
         this.precio = Integer.parseInt(precio);
         this.numBanos = Integer.parseInt(numBanos);
         this.numPiezas = Integer.parseInt(numPiezas);
@@ -32,7 +32,7 @@ public class propiedades{
         this.metrosCuadrados = Integer.parseInt(metrosCuadrados);
     }
 
-    public propiedades() {
+    public Propiedades() {
     }
     
     

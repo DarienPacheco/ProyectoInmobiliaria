@@ -3,11 +3,11 @@ package com.mycompany.inmobiliaria;
 import java.io.* ;
 import java.util.*;
 
-public class mercado{
+public class Mercado{
     private int[] demanda = new int[4];
-    HashMap <Integer,propiedades> mapaPropiedades;
-    ArrayList<asesor> asesores;
-    ArrayList<cliente> vendedores;
+    HashMap <Integer,Propiedades> mapaPropiedades;
+    ArrayList<Asesor> asesores;
+    ArrayList<Cliente> vendedores;
     
     public int[] getDemanda() {
         return demanda;
@@ -17,13 +17,13 @@ public class mercado{
         this.demanda = demanda;
     }
 
-    public mercado() {
+    public Mercado() {
         asesores = new ArrayList();
         vendedores= new ArrayList();
         mapaPropiedades = new HashMap();
     }
     
-    public mercado (int a, int b, int c, int d,int id, propiedades x, asesor aa,cliente vv){
+    public Mercado (int a, int b, int c, int d,int id, Propiedades x, Asesor aa,Cliente vv){
 
         this.demanda[0] = a;
         this.demanda[1] = b;
@@ -36,7 +36,7 @@ public class mercado{
     
     public void busqueda(int id){
         if(mapaPropiedades.containsKey(id)){
-            propiedades y = (propiedades) mapaPropiedades.get(id);
+            Propiedades y = (Propiedades) mapaPropiedades.get(id);
             System.out.println("Su busqueda nos otorgo el siguiente resultado:");
             System.out.println("Casa : " + y.getId());
             System.out.println("Habitaciones: " + y.getNumPiezas());
@@ -53,7 +53,7 @@ public class mercado{
         int contador = 1;
         int limite = mapaPropiedades.size();
         while(contador<=limite){
-            propiedades y = (propiedades) mapaPropiedades.get(contador);
+            Propiedades y = (Propiedades) mapaPropiedades.get(contador);
             if(supinf){
                 if(precio>= y.getPrecio()){
                     System.out.println("Su busqueda nos otorgo el siguiente resultado:");
@@ -82,7 +82,7 @@ public class mercado{
         }
     }
     public void busqueda(int precioMin, int precioMax){
-        for (propiedades pp : mapaPropiedades.values()) {
+        for (Propiedades pp : mapaPropiedades.values()) {
             if ((precioMin < pp.getPrecio()) && (pp.getPrecio() < precioMax)){
                 System.out.println("Su busqueda nos otorgo el siguiente resultado:");
                 System.out.println("Casa : " + pp.getId());
@@ -94,7 +94,7 @@ public class mercado{
         }
     }
     public void mostrarAsesores(){
-        asesor aPivot;
+        Asesor aPivot;
         int i = 0 ;
         while(i < asesores.size()){
             
@@ -108,7 +108,7 @@ public class mercado{
     }
     
     public void mostrarVendedores(){
-        cliente cPivot;
+        Cliente cPivot;
         int i = 0 ;
         while(i < vendedores.size()){
             cPivot = vendedores.get(i);
@@ -122,7 +122,7 @@ public class mercado{
     }
         
     public int buscaAsesor(String rut){
-        asesor aPivot;
+        Asesor aPivot;
         int i = 0;
         boolean verificador = false;
         while(i < asesores.size()){
@@ -141,7 +141,7 @@ public class mercado{
     }
     
     public int buscaPropietario(String rut){
-        cliente cPivot;
+        Cliente cPivot;
         int i= 0;
         boolean verificador = false;
         while(i< vendedores.size()){
@@ -159,7 +159,7 @@ public class mercado{
         return 0;
     }
     public void agregarAsesor() throws IOException{
-        asesor aPivot = new asesor();
+        Asesor aPivot = new Asesor();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese Nombre");
         String nombre = lector.readLine();
@@ -177,7 +177,7 @@ public class mercado{
     }
     
     public void agregarPropiedad() throws IOException{
-        propiedades pPivot = new propiedades();
+        Propiedades pPivot = new Propiedades();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese el precio de la propiedad");
         String precio = lector.readLine();
@@ -203,7 +203,7 @@ public class mercado{
     }
     
     public void agregarVendedores() throws IOException{
-        cliente cPivot = new cliente();
+        Cliente cPivot = new Cliente();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese Nombre");
         String nombre = lector.readLine();

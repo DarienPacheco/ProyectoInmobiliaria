@@ -3,21 +3,21 @@ package com.mycompany.inmobiliaria;
 import java.io.* ;
 
 
-public class test {
+public class Main {
     public static void main(String[] args)  throws IOException{
-        propiedades casa = new propiedades("300" ,"3", "7" , "casa" , "Las Condes", "1" , "300" );
-        cliente ramon = new cliente("Ramon julio" , "19.459.616-8", "935" ,"950860856" ,"ramonjuliotula@gmail.com" ,"darienrico123" );
-        boletaCompra primera = new boletaCompra("300", "01", "935", "69");
-        asesor juan= new asesor("juan","17.354.123-k", "jj1817@gmail.com","yes","5","juanitochupameelpito");
-        mercado Mercado= new mercado();
+        Propiedades casa = new Propiedades("300" ,"3", "7" , "casa" , "Las Condes", "1" , "300" );
+        Cliente ramon = new Cliente("Ramon julio" , "19.459.616-8", "935" ,"950860856" ,"ramonjuliotula@gmail.com" ,"darienrico123" );
+        BoletaCompra primera = new BoletaCompra("300", "01", "935", "69");
+        Asesor juan= new Asesor("juan","17.354.123-k", "jj1817@gmail.com","yes","5","juanitochupameelpito");
+        Mercado Mercado= new Mercado();
         
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         int opcion=10;
         String transformador;
         int pivot;
-        asesor aPivot ;
-        cliente vPivot ;
-        propiedades pPivot ;
+        Asesor aPivot ;
+        Cliente vPivot ;
+        Propiedades pPivot ;
         while(opcion != 0){
             System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar: \n");
             System.out.println("1. Mostrar Asesores");

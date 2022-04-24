@@ -3,23 +3,23 @@ package com.mycompany.inmobiliaria;
 import java.io.* ;
 import java.util.*;
 
-public class asesor{
+public class Asesor{
     private String nombreAsesor;
     private String rutAsesor;
     private String mailAsesor;
     private String passAsesor;
     private String disponibilidad;
     private String clasificacion;
-    private ArrayList<cliente> aClientes;
+    private ArrayList<Cliente> aClientes;
 
-    public asesor() {
+    public Asesor() {
         aClientes = new ArrayList();
     }
     
     
     
     
-    public asesor(String nombre, String rut, String mail, String disponibilidad, String clasificacion, String pass){
+    public Asesor(String nombre, String rut, String mail, String disponibilidad, String clasificacion, String pass){
         this.nombreAsesor = nombre;
         this.rutAsesor = rut;
         this.mailAsesor = mail;
@@ -79,7 +79,7 @@ public class asesor{
     }
     
     public void mostrarClientes(){
-        cliente cPivot;
+        Cliente cPivot;
         int i = 0 ;
         while(i < aClientes.size()){
             cPivot = aClientes.get(i);

@@ -3,17 +3,17 @@ package com.mycompany.inmobiliaria;
 import java.io.* ;
 import java.util.*;
 
-public class cliente{
+public class Cliente{
     private String nombreCliente;
     private String rutCliente;
     private int idCliente;
     private int telefono;
     private String mailCliente;
     private String passCliente;
-    private ArrayList<propiedades> props;
+    private ArrayList<Propiedades> props;
     
     
-    public cliente (String nombre, String rut, String id, String telefono, String mail, String pass){
+    public Cliente (String nombre, String rut, String id, String telefono, String mail, String pass){
         this.nombreCliente = nombre;
         this.rutCliente = rut;
         this.idCliente = Integer.parseInt(id);
@@ -24,7 +24,7 @@ public class cliente{
     
     }
 
-    public cliente(){
+    public Cliente(){
        props = new ArrayList();
     }
     
@@ -80,7 +80,7 @@ public class cliente{
     }
     
     public void mostrarPropiedades(){
-        propiedades pPivot;
+        Propiedades pPivot;
         int i = 0 ;
         while(i < props.size()){
             pPivot = props.get(i);

@@ -2,14 +2,14 @@ package com.mycompany.inmobiliaria;
 
 import java.io.* ;
 
-public class boletaCompra{
+public class BoletaCompra{
     private int idVendedor;
     private int idComprador;
     private int precio;
     private int idCasa;
     
     
-    public boletaCompra(String precio, String idCasa, String idVendedor, String idComprador){
+    public BoletaCompra(String precio, String idCasa, String idVendedor, String idComprador){
         this.precio = Integer.parseInt(precio);
         this.idCasa = Integer.parseInt(idCasa);
         this.idVendedor = Integer.parseInt(idVendedor);

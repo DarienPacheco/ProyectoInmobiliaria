@@ -10,6 +10,7 @@ public class Main {
         BoletaCompra primera = new BoletaCompra("300", "01", "935", "69");
         Asesor juan= new Asesor("juan","17.354.123-k", "jj1817@gmail.com","yes","5","juanitochupameelpito");
         Mercado Mercado= new Mercado();
+        Cliente Cliente = new Cliente();
         
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         int opcion=10;
@@ -28,6 +29,9 @@ public class Main {
             System.out.println("6. Agregar Vendedores");
             System.out.println("7. Agregar Propiedad");
             System.out.println("8. Agregar Clientes a un Asesor");
+            System.out.println("9. Eliminar Propiedad");
+            System.out.println("10. Eliminar Vendedor");
+            System.out.println("11. Eliminar Asesor");
             System.out.println("0. Cerrar");
             transformador = lector.readLine();
             opcion = Integer.parseInt(transformador);
@@ -77,10 +81,22 @@ public class Main {
                     int option = Integer.parseInt(lector.readLine());
                     switch(option){
                         case 1:
-                            Mercado.agregarPropiedad();
-                        //case 2 aun no se termina
+                            Mercado.agregarPropiedad(option);
+                            break;
+                        case 2:
+                            Mercado.agregarPropiedad(option);
+                            break;
                     }
-                     break;
+                    break;
+                case 9:
+                    Cliente.eliminarPropiedad();
+                    break;
+                case 10:
+                    Mercado.eliminarVendedor();
+                    break;
+                case 11:
+                    Mercado.eliminarAsesor();
+                    break;
                 default:
                     System.out.println("El valor entregado no es valido."); 
                     break;

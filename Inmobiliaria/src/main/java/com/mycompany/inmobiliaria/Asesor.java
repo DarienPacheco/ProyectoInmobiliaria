@@ -91,4 +91,17 @@ public class Asesor{
         }
     }
     
+    public void eliminarCliente() throws IOException{
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Ingrese Id del Cliente");
+        int id = Integer.parseInt(lector.readLine());
+        Cliente vPivot = new Cliente();
+        for(int i = 0; i < aClientes.size(); i++){
+            vPivot = aClientes.get(i);
+            if(vPivot.getId() == id){
+                aClientes.remove(i);
+            }
+        }
+    }
+    
 } // Fin clase

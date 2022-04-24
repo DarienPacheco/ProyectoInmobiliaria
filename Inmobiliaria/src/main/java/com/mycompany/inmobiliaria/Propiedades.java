@@ -35,7 +35,6 @@ public class Propiedades{
     public Propiedades() {
     }
     
-    
     public int getPrecio() {
         return precio;
     }

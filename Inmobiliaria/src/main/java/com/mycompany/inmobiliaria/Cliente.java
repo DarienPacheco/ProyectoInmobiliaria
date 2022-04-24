@@ -28,8 +28,6 @@ public class Cliente{
        props = new ArrayList();
     }
     
-    
-    
     public String getNombre() {
         return nombreCliente;
     }
@@ -90,6 +88,19 @@ public class Cliente{
             System.out.println("Baños: " + pPivot.getNumBanos());
             System.out.println("Metros cuadrados: "+ pPivot.getMetrosCuadrados());
             i++;
+        }
+    }
+    
+    public void eliminarPropiedad() throws IOException{
+        Propiedades pPivot = new Propiedades();
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Ingrese Id de la Propiedad");
+        int id = Integer.parseInt(lector.readLine());
+        for(int i = 0; i < props.size(); i++){
+            pPivot = props.get(i);
+            if(pPivot.getId() == id){
+                props.remove(i);
+            }
         }
     }
     

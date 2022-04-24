@@ -176,7 +176,7 @@ public class Mercado{
         asesores.add(aPivot);
     }
     
-    public void agregarPropiedad() throws IOException{
+    public void agregarPropiedad(int option) throws IOException{
         Propiedades pPivot = new Propiedades();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese el precio de la propiedad");
@@ -188,7 +188,16 @@ public class Mercado{
         System.out.println("Ingrese el numero de piezas de la propiedad");
         String numPiezas = lector.readLine();
         pPivot.setNumPiezas(Integer.parseInt(numPiezas));
-        pPivot.setTipo("Departamento");
+        if(option == 1){
+            pPivot.setTipo("Departamento");
+            System.out.println("Ingrese el piso en que se encuentra la propiedad");
+            int piso = Integer.parseInt(lector.readLine());
+            pPivot.setPiso(piso);
+        }
+        if(option == 2){
+            pPivot.setTipo("Casa");
+        }
+        
         System.out.println("Ingrese la direccion de la propiedad");
         String direccion = lector.readLine();
         pPivot.setDireccion(direccion);
@@ -196,9 +205,6 @@ public class Mercado{
         System.out.println("Ingrese los metros cuadrados de la propiedad");
         String metrosCuadrados = lector.readLine();
         pPivot.setMetrosCuadrados(Integer.parseInt(metrosCuadrados));
-        System.out.println("Ingrese el piso en que se encuentra la propiedad");
-        int piso = Integer.parseInt(lector.readLine());
-        pPivot.setPiso(piso);
         mapaPropiedades.put(pPivot.getId(), pPivot);
     }
     
@@ -222,7 +228,33 @@ public class Mercado{
         String pass = lector.readLine();
         cPivot.setPass(pass);
         vendedores.add(cPivot);
-        
-        
     }
+    
+    public void eliminarVendedor() throws IOException{
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Ingrese Id del Vendedor");
+        int id = Integer.parseInt(lector.readLine());
+        Cliente vPivot = new Cliente();
+        for(int i = 0; i < vendedores.size(); i++){
+            vPivot = vendedores.get(i);
+            if(vPivot.getId() == id){
+                vendedores.remove(i);
+            }
+        }
+    }
+    
+    public void eliminarAsesor() throws IOException{
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Ingrese RUT del Asesor");
+        String rut = lector.readLine();
+        Asesor aPivot = new Asesor();
+        
+        for(int i = 0; i < asesores.size(); i++){
+            aPivot = asesores.get(i);
+            if(aPivot.getRut() == rut){
+                asesores.remove(i);
+            }
+        }
+    }
+    
 }

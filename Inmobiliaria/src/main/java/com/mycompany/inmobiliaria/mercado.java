@@ -1,11 +1,13 @@
+package com.mycompany.inmobiliaria;
+
 import java.io.* ;
 import java.util.*;
 
 public class mercado{
     private int[] demanda = new int[4];
-    HashMap mapaPropiedades = new HashMap();
-    ArrayList<asesor> asesores = new ArrayList();
-    ArrayList<cliente> vendedores= new ArrayList();
+    HashMap <Integer,propiedades> mapaPropiedades;
+    ArrayList<asesor> asesores;
+    ArrayList<cliente> vendedores;
     
     public int[] getDemanda() {
         return demanda;
@@ -15,6 +17,12 @@ public class mercado{
         this.demanda = demanda;
     }
 
+    public mercado() {
+        asesores = new ArrayList();
+        vendedores= new ArrayList();
+        mapaPropiedades = new HashMap();
+    }
+    
     public mercado (int a, int b, int c, int d,int id, propiedades x, asesor aa,cliente vv){
 
         this.demanda[0] = a;
@@ -73,7 +81,18 @@ public class mercado{
             System.out.println("Su busqueda no ha dado resultados.\n");
         }
     }
-   
+    public void busqueda(int precioMin, int precioMax){
+        for (propiedades pp : mapaPropiedades.values()) {
+            if ((precioMin < pp.getPrecio()) && (pp.getPrecio() < precioMax)){
+                System.out.println("Su busqueda nos otorgo el siguiente resultado:");
+                System.out.println("Casa : " + pp.getId());
+                System.out.println("Precio: " +pp.getPrecio() + "UF");
+                System.out.println("Habitaciones: " + pp.getNumPiezas());
+                System.out.println("Baños: " + pp.getNumBanos());
+                System.out.println("Area: " + pp.getMetrosCuadrados());   
+            }
+        }
+    }
     public void mostrarAsesores(){
         asesor aPivot;
         int i = 0 ;
@@ -139,8 +158,8 @@ public class mercado{
         }
         return 0;
     }
-    public asesor agregarAsesor() throws IOException{
-        asesor aPivot = null;
+    public void agregarAsesor() throws IOException{
+        asesor aPivot = new asesor();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese Nombre");
         String nombre = lector.readLine();
@@ -154,11 +173,11 @@ public class mercado{
         System.out.println("Ingrese Contraseña");
         String pass = lector.readLine();
         aPivot.setPass(pass);
-        return aPivot;
+        asesores.add(aPivot);
     }
     
-    public propiedades agregarPropiedad() throws IOException{
-        propiedades pPivot = null;
+    public void agregarPropiedad() throws IOException{
+        propiedades pPivot = new propiedades();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese el precio de la propiedad");
         String precio = lector.readLine();
@@ -180,11 +199,11 @@ public class mercado{
         System.out.println("Ingrese el piso en que se encuentra la propiedad");
         int piso = Integer.parseInt(lector.readLine());
         pPivot.setPiso(piso);
-        return pPivot;
+        mapaPropiedades.put(pPivot.getId(), pPivot);
     }
     
-    public cliente agregarVendedores() throws IOException{
-        cliente cPivot = null;
+    public void agregarVendedores() throws IOException{
+        cliente cPivot = new cliente();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese Nombre");
         String nombre = lector.readLine();
@@ -202,7 +221,7 @@ public class mercado{
         System.out.println("Ingrese Contraseña");
         String pass = lector.readLine();
         cPivot.setPass(pass);
-        return cPivot;
+        vendedores.add(cPivot);
         
         
     }

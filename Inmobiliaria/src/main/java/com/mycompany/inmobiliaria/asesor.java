@@ -1,3 +1,5 @@
+package com.mycompany.inmobiliaria;
+
 import java.io.* ;
 import java.util.*;
 
@@ -8,19 +10,23 @@ public class asesor{
     private String passAsesor;
     private String disponibilidad;
     private String clasificacion;
-    private ArrayList<cliente> aClientes = new ArrayList();
+    private ArrayList<cliente> aClientes;
+
+    public asesor() {
+        aClientes = new ArrayList();
+    }
     
     
     
     
-    public asesor(String nombre, String rut, String mail, String disponibilidad, String clasificacion, String pass, cliente cc){
+    public asesor(String nombre, String rut, String mail, String disponibilidad, String clasificacion, String pass){
         this.nombreAsesor = nombre;
         this.rutAsesor = rut;
         this.mailAsesor = mail;
         this.disponibilidad = disponibilidad;
         this.clasificacion = clasificacion;
         this.passAsesor = pass;
-        aClientes.add(cc);
+        aClientes = new ArrayList();
     }
     
 

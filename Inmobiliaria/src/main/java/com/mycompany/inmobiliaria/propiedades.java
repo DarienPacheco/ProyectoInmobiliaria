@@ -1,3 +1,5 @@
+package com.mycompany.inmobiliaria;
+
 import java.io.* ;
 import java.util.concurrent.ThreadLocalRandom;
 public class propiedades{
@@ -30,14 +32,9 @@ public class propiedades{
         this.metrosCuadrados = Integer.parseInt(metrosCuadrados);
     }
 
-    
-    public void mostrar(int banos,int piezas, int metros){
-        System.out.println("Esta propiedad cuenta con " + banos + " baños, " + piezas + " piezas y con " + metros + " metros cuadrados.");
+    public propiedades() {
     }
     
-    public void mostrar(int banos,int piezas, int metros, int piso){
-        System.out.println("Esta propiedad cuenta con " + banos + " baños, " + piezas + " piezas, esta a " + piso + " por encima del primer piso y con " + metros + " metros cuadrados.");
-    }
     
     public int getPrecio() {
         return precio;

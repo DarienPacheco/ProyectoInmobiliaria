@@ -1,3 +1,5 @@
+package com.mycompany.inmobiliaria;
+
 import java.io.* ;
 
 public class boletaCompra{

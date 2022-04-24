@@ -1,13 +1,15 @@
+package com.mycompany.inmobiliaria;
+
 import java.io.* ;
 
 
 public class test {
     public static void main(String[] args)  throws IOException{
         propiedades casa = new propiedades("300" ,"3", "7" , "casa" , "Las Condes", "1" , "300" );
-        cliente ramon = new cliente("Ramon julio" , "19.459.616-8", "935" ,"950860856" ,"ramonjuliotula@gmail.com" ,"darienrico123", casa );
+        cliente ramon = new cliente("Ramon julio" , "19.459.616-8", "935" ,"950860856" ,"ramonjuliotula@gmail.com" ,"darienrico123" );
         boletaCompra primera = new boletaCompra("300", "01", "935", "69");
-        asesor juan= new asesor("juan","17.354.123-k", "jj1817@gmail.com","yes","5","juanitochupameelpito", ramon);
-        mercado Mercado= new mercado( 1 , 2 , 3 , 4 , casa.getId() , casa, juan, ramon);
+        asesor juan= new asesor("juan","17.354.123-k", "jj1817@gmail.com","yes","5","juanitochupameelpito");
+        mercado Mercado= new mercado();
         
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         int opcion=10;
@@ -63,22 +65,22 @@ public class test {
                         break;
                     }
                 case 5:
-                    aPivot = Mercado.agregarAsesor();
-                    Mercado.asesores.add(aPivot);
+                    Mercado.agregarAsesor();
+                    break;
+                    
                 case 6:
-                    vPivot = Mercado.agregarVendedores();
-                    Mercado.vendedores.add(vPivot);
+                    Mercado.agregarVendedores();
+                    break;
                 case 7:
                     System.out.println("1. Departamento");
                     System.out.println("2. Casa");
                     int option = Integer.parseInt(lector.readLine());
                     switch(option){
                         case 1:
-                            pPivot = Mercado.agregarPropiedad();
-                            Mercado.mapaPropiedades.put(pPivot.getId(), pPivot);
+                            Mercado.agregarPropiedad();
                         //case 2 aun no se termina
                     }
-                      
+                     break;
                 default:
                     System.out.println("El valor entregado no es valido."); 
                     break;

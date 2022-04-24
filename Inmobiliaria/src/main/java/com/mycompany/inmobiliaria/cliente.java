@@ -1,3 +1,5 @@
+package com.mycompany.inmobiliaria;
+
 import java.io.* ;
 import java.util.*;
 
@@ -8,18 +10,22 @@ public class cliente{
     private int telefono;
     private String mailCliente;
     private String passCliente;
-    private ArrayList<propiedades> props = new ArrayList();
+    private ArrayList<propiedades> props;
     
     
-    public cliente (String nombre, String rut, String id, String telefono, String mail, String pass, propiedades pp){
+    public cliente (String nombre, String rut, String id, String telefono, String mail, String pass){
         this.nombreCliente = nombre;
         this.rutCliente = rut;
         this.idCliente = Integer.parseInt(id);
         this.telefono = Integer.parseInt(telefono);
         this.mailCliente = mail;
         this.passCliente = pass;
-        props.add(pp);
+        props = new ArrayList();
     
+    }
+
+    public cliente(){
+       props = new ArrayList();
     }
     
     

@@ -120,7 +120,7 @@ public class Mercado{
             i++;
         }  
     }
-        
+    //Retorna un int el cual da la posicion del asesor buscado, en el mercado.
     public int buscaAsesor(String rut){
         Asesor aPivot;
         int i = 0;
@@ -256,5 +256,68 @@ public class Mercado{
             }
         }
     }
+    //Loop el cual recibe un rut, ocupa buscaAsesor y permite modificar los valores existentes.
+    //Para el caso de el rut, este antes de cambiarse verifica si ese ya existe dentro de la lista.
+    //Para el resto de los casos permite una modificacion inmediata.
+    public void modificarAsesor(String rut) throws IOException{
+        String sPivot;
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        int i = buscaAsesor(rut);
+        int x=1,y;
+        if(i!=0){
+            i--;
+            Asesor aPivot = asesores.get(i);
+            while(x!=0){
+                System.out.println("Favor seleccione el valor a modificar");
+                mostrarAsesor(aPivot);
+                x = Integer.parseInt(lector.readLine());
+                switch(x){
+                    case 0:
+                        break;
+                    case 1:
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        aPivot.setNombre(lector.readLine());
+                        break;
+                    case 2:
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        sPivot=lector.readLine();
+                        y=buscaAsesor(sPivot);
+                        if(y!= 0){
+                            System.out.println("El Rut ingresado ya existe.");
+                            break;
+                        }else{
+                           aPivot.setRut(sPivot);
+                           break;
+                        }
+                    case 3:  
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        aPivot.setMail(lector.readLine());
+                        break;
+                    case 4:  
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        aPivot.setPass(lector.readLine());
+                        break;
+                    case 5:  
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        aPivot.setDisponibilidad(lector.readLine());
+                        break;
+                    case 6:  
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        aPivot.setClasificacion(lector.readLine());
+                        break;       
+                }
+            }   
+        }
+    } 
     
+    public void mostrarAsesor(Asesor x){
+            System.out.println( "1.Nombre : " + x.getNombre() );
+            System.out.println( "2.Rut : " + x.getRut());
+            System.out.println( "3.Mail : " + x.getMail());
+            System.out.println( "4.Contraseña : " + x.getPass());
+            System.out.println( "5.Disponibilidad : " + x.getDisponibilidad());
+            System.out.println( "6.Clasificación : " + x.getClasificacion());
+            System.out.println( "0.Salir");
+            System.out.println("--------------------------------\n");         
+    }
 }

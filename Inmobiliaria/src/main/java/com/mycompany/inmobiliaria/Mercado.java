@@ -139,7 +139,7 @@ public class Mercado{
         }
         return 0;
     }
-    
+    //Otorga la posicion+1 de un propietario en la lista dandose el rut
     public int buscaPropietario(String rut){
         Cliente cPivot;
         int i= 0;
@@ -158,6 +158,25 @@ public class Mercado{
         }
         return 0;
     }
+    //Lo mismo que la anterior pero con el id.
+    public int buscaPropietario(int id){
+        Cliente cPivot;
+        int i= 0;
+        boolean verificador = false;
+        while(i< vendedores.size()){
+            cPivot = vendedores.get(i);
+            if(id == cPivot.getId()){
+                verificador = true;
+                return ( i +1 );
+            }else{
+                i++;
+            }
+        }
+        if(verificador == false){
+            System.out.println("El rut ingresado no pertenece a ningun propietario");
+        }
+        return 0;
+    }    
     public void agregarAsesor() throws IOException{
         Asesor aPivot = new Asesor();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
@@ -217,7 +236,9 @@ public class Mercado{
         System.out.println("Ingrese Rut");
         String rut = lector.readLine();
         cPivot.setRut(rut);
-        cPivot.setId();
+        System.out.println("Ingrese Id");
+        rut = lector.readLine();
+        cPivot.setId(Integer.parseInt(rut));
         System.out.println("Ingrese Telefono");
         String telefono = lector.readLine();
         cPivot.setTelefono(Integer.parseInt(telefono));
@@ -234,7 +255,7 @@ public class Mercado{
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese Id del Vendedor");
         int id = Integer.parseInt(lector.readLine());
-        Cliente vPivot = new Cliente();
+        Cliente vPivot;
         for(int i = 0; i < vendedores.size(); i++){
             vPivot = vendedores.get(i);
             if(vPivot.getId() == id){
@@ -317,6 +338,75 @@ public class Mercado{
             System.out.println( "4.Contraseña : " + x.getPass());
             System.out.println( "5.Disponibilidad : " + x.getDisponibilidad());
             System.out.println( "6.Clasificación : " + x.getClasificacion());
+            System.out.println( "0.Salir");
+            System.out.println("--------------------------------\n");         
+    }
+    
+    public void modificarVendedor(String rut)throws IOException{
+        String sPivot;
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        int i = buscaPropietario(rut);
+        int x=1,y;
+        if(i!=0){
+            i--;
+            Cliente cPivot = vendedores.get(i);
+            while(x!=0){
+                System.out.println("Favor seleccione el valor a modificar");
+                mostrarVendedor(cPivot);
+                x = Integer.parseInt(lector.readLine());
+                switch(x){
+                    case 0:
+                        break;
+                    case 1:
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        cPivot.setNombre(lector.readLine());
+                        break;
+                    case 2:
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        sPivot=lector.readLine();
+                        y=buscaPropietario(sPivot);
+                        if(y!= 0){
+                            System.out.println("El Rut ingresado ya existe.");
+                            break;
+                        }else{
+                           cPivot.setRut(sPivot);
+                           break;
+                        }
+                    case 3:  
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        sPivot=lector.readLine();
+                        y=buscaPropietario(Integer.parseInt(sPivot));
+                        if(y!= 0){
+                            System.out.println("El Id ingresado ya existe.");
+                            break;
+                        }else{
+                           cPivot.setId(Integer.parseInt(sPivot));
+                           break;
+                        }
+                    case 4:  
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        cPivot.setTelefono(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 5:  
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        cPivot.setMail(lector.readLine());
+                        break;
+                    case 6:  
+                        System.out.println("Favor ingrese el nuevo valor.");
+                        cPivot.setPass(lector.readLine());
+                        break;       
+                }
+            }   
+        }    
+    }
+    
+        public void mostrarVendedor(Cliente x){
+            System.out.println( "1.Nombre : " + x.getNombre() );
+            System.out.println( "2.Rut : " + x.getRut());
+            System.out.println( "3.Id : " + x.getId());
+            System.out.println( "4.Telefono : " + x.getTelefono());
+            System.out.println( "5.Mail : " + x.getMail());
+            System.out.println( "6.Contraseña : " + x.getPass());
             System.out.println( "0.Salir");
             System.out.println("--------------------------------\n");         
     }

@@ -48,8 +48,7 @@ public class Cliente{
         return idCliente;
     }
 
-    public void setId() {
-        int numero = (int)(Math.random()*10000+1);
+    public void setId(int numero) {
         this.idCliente = numero;
     }
 

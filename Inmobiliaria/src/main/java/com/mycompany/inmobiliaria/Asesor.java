@@ -99,6 +99,10 @@ public class Asesor{
     }
     //Busca un cliente de un asesor con su rut, retornando su posicion+1 o 0 en caso de no encontrarlo.
     public int buscarCliente(String rut){
+        if(aClientes.size()==0){
+            System.out.println("La lista se encuentra vacia");
+            return 0;
+        }
         Cliente cPivot;
         int i = 0;
         boolean verificador = false;
@@ -118,6 +122,10 @@ public class Asesor{
     }
     //Sobrecarga de buscarcliente en este caso con id.
     public int buscarCliente(int id){
+        if(aClientes.size()==0){
+            System.out.println("La lista se encuentra vacia");
+            return 0;
+        }
         Cliente cPivot;
         int i= 0;
         boolean verificador = false;

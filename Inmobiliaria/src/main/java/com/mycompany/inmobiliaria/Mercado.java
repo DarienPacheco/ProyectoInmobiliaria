@@ -128,6 +128,10 @@ public class Mercado{
     }
     //Retorna un int el cual da la posicion del asesor buscado, en el mercado.
     public int buscaAsesor(String rut){
+        if(asesores.size()==0){
+            System.out.println("La lista se encuentra vacia");
+            return 0;
+        }        
         Asesor aPivot;
         int i = 0;
         boolean verificador = false;
@@ -147,6 +151,10 @@ public class Mercado{
     }
     //Otorga la posicion+1 de un propietario en la lista dandose el rut
     public int buscaPropietario(String rut){
+        if(vendedores.size()==0){
+            System.out.println("La lista se encuentra vacia");
+            return 0;
+        }
         Cliente cPivot;
         int i= 0;
         boolean verificador = false;
@@ -166,6 +174,10 @@ public class Mercado{
     }
     //Lo mismo que la anterior pero con el id.
     public int buscaPropietario(int id){
+        if(vendedores.size()==0){
+            System.out.println("La lista se encuentra vacia");
+            return 0;
+        }
         Cliente cPivot;
         int i= 0;
         boolean verificador = false;

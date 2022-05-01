@@ -110,6 +110,10 @@ public class Cliente{
         }
     }
     public int buscarPropiedad(int id){
+        if(props.size()==0){
+            System.out.println("La lista se encuentra vacia");
+            return 0;
+        }
         Propiedades pPivot;
         int i= 0;
         boolean verificador = false;

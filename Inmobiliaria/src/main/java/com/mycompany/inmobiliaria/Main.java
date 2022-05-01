@@ -14,6 +14,7 @@ public class Main {
         
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         int opcion=10;
+        int opcion2=10;
         String transformador;
         int pivot;
         Asesor aPivot ;
@@ -32,6 +33,7 @@ public class Main {
             System.out.println("9. Eliminar Propiedad");
             System.out.println("10. Eliminar Vendedor");
             System.out.println("11. Eliminar Asesor");
+            System.out.println("12. Modificar");
             System.out.println("0. Cerrar");
             transformador = lector.readLine();
             opcion = Integer.parseInt(transformador);
@@ -96,6 +98,44 @@ public class Main {
                     break;
                 case 11:
                     Mercado.eliminarAsesor();
+                    break;
+                case 12:
+                    while(opcion2!=0){
+                        System.out.println("Favor ingrese la opcion deseada");
+                        System.out.println("1. Asesor");
+                        System.out.println("2. Vendedor");
+                        System.out.println("3. Clientes de Asesor");
+                        System.out.println("4. Propiedades de Vendedor"); 
+                        System.out.println("0. Salir");
+                        opcion2 = Integer.parseInt(lector.readLine());
+                        switch(opcion2){
+                            case 0:
+                                break;
+                            case 1:
+                                System.out.println("Favor ingrese el rut del asesor a modificar.");
+                                Mercado.modificarAsesor(lector.readLine());
+                                break;
+                            case 2:
+                                System.out.println("Favor ingrese el rut del vendedor a modificar.");
+                                Mercado.modificarVendedor(lector.readLine());                                
+                                break;
+                            case 3:
+                                System.out.println("Favor ingrese el rut del asesor al cual quiere modificar clientes.");
+                                pivot = Mercado.buscaAsesor(lector.readLine());
+                                if(pivot!=0){
+                                    pivot--;
+                                    aPivot = Mercado.asesores.get(pivot);
+                                    aPivot.modificarClientes();
+                                }else{
+                                    break;
+                                }
+                                
+                                break;
+                            case 4:
+                                System.out.println("No implementado");
+                                break;
+                        }
+                    }
                     break;
                 default:
                     System.out.println("El valor entregado no es valido."); 

@@ -80,6 +80,9 @@ public class Asesor{
     }
     
     public void mostrarClientes(){
+        if(aClientes.size()==0){
+            System.out.println("La lista se encuentra vacia");
+        }
         Cliente cPivot;
         int i = 0 ;
         while(i < aClientes.size()){

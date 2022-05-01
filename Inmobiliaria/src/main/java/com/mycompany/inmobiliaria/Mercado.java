@@ -94,6 +94,9 @@ public class Mercado{
         }
     }
     public void mostrarAsesores(){
+        if(asesores.size()==0){
+            System.out.println("La lista se encuentra vacia");
+        }
         Asesor aPivot;
         int i = 0 ;
         while(i < asesores.size()){
@@ -108,6 +111,9 @@ public class Mercado{
     }
     
     public void mostrarVendedores(){
+        if(vendedores.size()==0){
+            System.out.println("La lista se encuentra vacia");
+        }
         Cliente cPivot;
         int i = 0 ;
         while(i < vendedores.size()){

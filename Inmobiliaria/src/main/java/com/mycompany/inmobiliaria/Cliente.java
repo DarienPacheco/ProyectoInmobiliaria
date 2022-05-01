@@ -77,6 +77,9 @@ public class Cliente{
     }
     
     public void mostrarPropiedades(){
+        if(props.size()==0){
+            System.out.println("La lista se encuentra vacia");
+        }
         Propiedades pPivot;
         int i = 0 ;
         while(i < props.size()){

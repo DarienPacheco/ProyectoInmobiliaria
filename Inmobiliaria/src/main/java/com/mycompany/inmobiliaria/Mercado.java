@@ -220,7 +220,7 @@ public class Mercado{
         System.out.println("Ingrese la direccion de la propiedad");
         String direccion = lector.readLine();
         pPivot.setDireccion(direccion);
-        pPivot.setId();
+        pPivot.setId(Integer.parseInt(lector.readLine()));
         System.out.println("Ingrese los metros cuadrados de la propiedad");
         String metrosCuadrados = lector.readLine();
         pPivot.setMetrosCuadrados(Integer.parseInt(metrosCuadrados));

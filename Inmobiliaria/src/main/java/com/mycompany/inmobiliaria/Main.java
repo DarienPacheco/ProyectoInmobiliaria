@@ -129,11 +129,16 @@ public class Main {
                                 }else{
                                     break;
                                 }
-                                
-                                break;
                             case 4:
-                                System.out.println("No implementado");
-                                break;
+                                System.out.println("Favor ingrese el rut del Vendedor al cual quiere modificar sus propiedades.");
+                                pivot = Mercado.buscaPropietario(lector.readLine());
+                                if(pivot!=0){
+                                    pivot--;
+                                    vPivot = Mercado.vendedores.get(pivot);
+                                    vPivot.modificarPropiedades();
+                                }else{
+                                    break;
+                                }
                         }
                     }
                     break;

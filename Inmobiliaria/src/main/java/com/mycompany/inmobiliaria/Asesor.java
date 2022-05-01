@@ -128,7 +128,7 @@ public class Asesor{
             }
         }
         if(verificador == false){
-            System.out.println("El rut ingresado no pertenece a ningun propietario");
+            System.out.println("El Id ingresado no pertenece a ningun cliente de este asesor");
         }
         return 0;
     }

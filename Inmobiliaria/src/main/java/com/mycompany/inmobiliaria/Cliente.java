@@ -11,7 +11,7 @@ public class Cliente{
     private String mailCliente;
     private String passCliente;
     private ArrayList<Propiedades> props;
-    
+    BufferedReader lector = new BufferedReader(new InputStreamReader(System.in)); 
     
     public Cliente (String nombre, String rut, String id, String telefono, String mail, String pass){
         this.nombreCliente = nombre;
@@ -81,11 +81,15 @@ public class Cliente{
         int i = 0 ;
         while(i < props.size()){
             pPivot = props.get(i);
-            System.out.println("Id casa: " + pPivot.getId());
-            System.out.println("Precio: " + pPivot.getPrecio());
-            System.out.println("Piezas: "+ pPivot.getNumPiezas());
-            System.out.println("Baños: " + pPivot.getNumBanos());
-            System.out.println("Metros cuadrados: "+ pPivot.getMetrosCuadrados());
+            System.out.println( "Id : " + pPivot.getId() );
+            System.out.println( "Precio : " + pPivot.getPrecio());
+            System.out.println( "Tamaño : " + pPivot.getMetrosCuadrados() + "Metros cuadrados");
+            System.out.println( "Piezas : " + pPivot.getNumPiezas());
+            System.out.println( "Telefono : " + pPivot.getNumBanos());
+            System.out.println( "Dirección : " + pPivot.getDireccion());
+            System.out.println( "Tipo : " + pPivot.getTipo());
+            System.out.println( "Piso : " + pPivot.getPiso());
+            System.out.println("--------------------------------\n");
             i++;
         }
     }
@@ -102,5 +106,91 @@ public class Cliente{
             }
         }
     }
+    public int buscarPropiedad(int id){
+        Propiedades pPivot;
+        int i= 0;
+        boolean verificador = false;
+        while(i< props.size()){
+            pPivot = props.get(i);
+            if(id == pPivot.getId()){
+                verificador = true;
+                return ( i +1 );
+            }else{
+                i++;
+            }
+        }
+        if(verificador == false){
+            System.out.println("El Id ingresado no pertenece a ninguna propiedad de este vendedor");
+        }
+        return 0;
+        
+    }
+    //Funciona al igual que las otras versiones de modificar con el loop extra, pero en este caso no se permite la modificacion de la variable ID
+    //Esto es debido a que causaria problemas con otros conjuntos de datos, como el mapa de mercado.
+    public void modificarPropiedades() throws IOException{
+        int x=0,opcion=1,i,y;
+        String sPivot;
+        Propiedades pPivot;
+        while(opcion!=0){
+            mostrarPropiedades();
+            System.out.println("Favor ingrese el rut del cliente al cual modificar");
+            i = buscarPropiedad(Integer.parseInt(lector.readLine()));
+            if(i!=0){
+                i--;
+                pPivot = props.get(i);
+                while(x!=0){
+                    System.out.println("Favor seleccione el valor a modificar");
+                    mostrarPropiedad(pPivot);
+                    x = Integer.parseInt(lector.readLine());
+                    switch(x){
+                        case 0:
+                            break;
+                        case 1:
+                            System.out.println("Favor ingrese el nuevo valor.");
+                            pPivot.setPrecio(Integer.parseInt(lector.readLine()));
+                            break;
+                        case 2:
+                            System.out.println("Favor ingrese el nuevo valor.");
+                            pPivot.setMetrosCuadrados(Integer.parseInt(lector.readLine()));
+                            break;
+                        case 3:
+                            System.out.println("Favor ingrese el nuevo valor.");
+                            pPivot.setNumPiezas(Integer.parseInt(lector.readLine()));
+                            break;
+                        case 4:  
+                            System.out.println("Favor ingrese el nuevo valor.");
+                            pPivot.setNumBanos(Integer.parseInt(lector.readLine()));
+                            break;
+                        case 5:  
+                            System.out.println("Favor ingrese el nuevo valor.");
+                            pPivot.setDireccion(lector.readLine());
+                            break;
+                        case 6:  
+                            System.out.println("Favor ingrese el nuevo valor.");
+                            pPivot.setTipo(lector.readLine());
+                            break;
+                        case 7:
+                            System.out.println("Favor ingrese el nuevo valor.");
+                            pPivot.setPiso(Integer.parseInt(lector.readLine()));
+                            break;
+                    }
+                }
+            }
+            System.out.println("Desea Modificar otra cosa?\n 1.si\n 0.no");
+            opcion = Integer.parseInt(lector.readLine());
+        }
+    }
     
+    
+    public void mostrarPropiedad(Propiedades x){
+            System.out.println( "1.Precio : " + x.getPrecio());
+            System.out.println( "2.Tamaño : " + x.getMetrosCuadrados() + "Metros cuadrados");
+            System.out.println( "3.Piezas : " + x.getNumPiezas());
+            System.out.println( "4.Telefono : " + x.getNumBanos());
+            System.out.println( "5.Dirección : " + x.getDireccion());
+            System.out.println( "6.Tipo : " + x.getTipo());
+            System.out.println( "7.Piso : " + x.getPiso());
+            System.out.println( "0.Salir");
+            System.out.println("--------------------------------\n");     
+    }
 } // Fin clase

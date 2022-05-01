@@ -79,9 +79,7 @@ public class Propiedades{
         return id;
     }
 
-    public void setId() {
-        int numero = (int)(Math.random()*10000+1);
-        
+    public void setId(int numero) {
         this.id = numero;
         
     }

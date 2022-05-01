@@ -181,17 +181,17 @@ public class Mercado{
         Asesor aPivot = new Asesor();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese Nombre");
-        String nombre = lector.readLine();
-        aPivot.setNombre(nombre);
+        aPivot.setNombre(lector.readLine());
         System.out.println("Ingrese Rut");
-        String rut = lector.readLine();
-        aPivot.setRut(rut);
+        aPivot.setRut(lector.readLine());
         System.out.println("Ingrese Mail");
-        String mail = lector.readLine();
-        aPivot.setMail(mail);
+        aPivot.setMail(lector.readLine());
         System.out.println("Ingrese Contraseña");
-        String pass = lector.readLine();
-        aPivot.setPass(pass);
+        aPivot.setPass(lector.readLine());
+        System.out.println("Ingrese Disponibilidad");
+        aPivot.setDisponibilidad(lector.readLine());
+        System.out.println("Ingrese Clasificacion");
+        aPivot.setClasificacion(lector.readLine());
         asesores.add(aPivot);
     }
     

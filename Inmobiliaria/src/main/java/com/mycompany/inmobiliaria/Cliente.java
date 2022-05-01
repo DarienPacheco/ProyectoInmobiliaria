@@ -10,7 +10,7 @@ public class Cliente{
     private int telefono;
     private String mailCliente;
     private String passCliente;
-    private ArrayList<Propiedades> props;
+    ArrayList<Propiedades> props;
     BufferedReader lector = new BufferedReader(new InputStreamReader(System.in)); 
     
     public Cliente (String nombre, String rut, String id, String telefono, String mail, String pass){

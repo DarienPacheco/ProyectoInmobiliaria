@@ -213,9 +213,10 @@ public class Mercado{
         asesores.add(aPivot);
     }
     
-    public void agregarPropiedad(int option) throws IOException{
+    public void agregarPropiedad(int option, int posicion) throws IOException{
         Propiedades pPivot = new Propiedades();
-        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        Cliente vPivot = vendedores.get(posicion);
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));       
         System.out.println("Ingrese el precio de la propiedad");
         String precio = lector.readLine();
         pPivot.setPrecio(Integer.parseInt(precio));
@@ -238,11 +239,13 @@ public class Mercado{
         System.out.println("Ingrese la direccion de la propiedad");
         String direccion = lector.readLine();
         pPivot.setDireccion(direccion);
-        pPivot.setId(Integer.parseInt(lector.readLine()));
+        pPivot.setId((mapaPropiedades.size()+1));
         System.out.println("Ingrese los metros cuadrados de la propiedad");
         String metrosCuadrados = lector.readLine();
         pPivot.setMetrosCuadrados(Integer.parseInt(metrosCuadrados));
         mapaPropiedades.put(pPivot.getId(), pPivot);
+        vPivot.props.add(pPivot);
+        
     }
     
     public void agregarVendedores() throws IOException{

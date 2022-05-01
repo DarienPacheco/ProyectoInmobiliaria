@@ -78,18 +78,24 @@ public class Main {
                     Mercado.agregarVendedores();
                     break;
                 case 7:
-                    System.out.println("1. Departamento");
-                    System.out.println("2. Casa");
-                    int option = Integer.parseInt(lector.readLine());
-                    switch(option){
-                        case 1:
-                            Mercado.agregarPropiedad(option);
-                            break;
-                        case 2:
-                            Mercado.agregarPropiedad(option);
-                            break;
+                    System.out.println("Favor ingrese el rut del dueño");
+                    pivot = Mercado.buscaPropietario(lector.readLine());
+                    if(pivot!=0){
+                        pivot--;
+                        System.out.println("1. Departamento");
+                        System.out.println("2. Casa");
+                        int option = Integer.parseInt(lector.readLine());
+                        switch(option){
+                            case 1:
+                                Mercado.agregarPropiedad(option,pivot);
+                                break;
+                            case 2:
+                                Mercado.agregarPropiedad(option,pivot);
+                                break;
+                        }
+                    }else{    
+                        break;
                     }
-                    break;
                 case 9:
                     Cliente.eliminarPropiedad();
                     break;

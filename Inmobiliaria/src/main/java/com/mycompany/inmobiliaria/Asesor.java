@@ -10,7 +10,7 @@ public class Asesor{
     private String passAsesor;
     private String disponibilidad;
     private String clasificacion;
-    private ArrayList<Cliente> aClientes;
+    public ArrayList<Cliente> aClientes;
     BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
 
     public Asesor() {

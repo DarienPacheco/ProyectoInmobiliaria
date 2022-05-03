@@ -431,4 +431,90 @@ public class Mercado{
             System.out.println( "0.Salir");
             System.out.println("--------------------------------\n");         
     }
+    
+    public void archivoReporte() throws IOException{
+        
+        File file = new File ("registro.txt");
+        FileWriter aux = new FileWriter(file, true);
+        BufferedWriter reporte = new BufferedWriter(aux);
+        
+        ArrayList<Asesor> aPivot = new ArrayList();
+        aPivot = asesores;
+        
+        /*int j = aPivot.size();
+        reporte.write("tamaño es : " + j);*/
+        
+        reporte.flush();
+        aux.flush();
+        reporte.close(); 
+        aux.close();
+        reporte.write("ASESORES \n");
+        for(int i=0; i < aPivot.size(); i++){
+            
+            reporte.write("Nombre Asesor: " + aPivot.get(i).getNombre() + "\n");
+            reporte.write("Rut: " + aPivot.get(i).getRut() + "\n");
+            reporte.write("Correo: " + aPivot.get(i).getMail() + "\n");
+            reporte.write("Contraseña: " + aPivot.get(i).getPass() + "\n");
+            reporte.write("Disponibilidad: " + aPivot.get(i).getDisponibilidad() + "\n");
+            reporte.write("Clasificacion: " + aPivot.get(i).getClasificacion() + "\n");
+            reporte.flush();
+            aux.flush();
+            reporte.close();
+            aux.close();
+            if(aPivot.get(i).aClientes.get(i).equals(true)){
+                reporte.write("Cliente(s) de " + aPivot.get(i).getNombre() + ": \n");
+                for(int j=0; j <= aPivot.get(i).aClientes.size(); j++){
+                    reporte.write("Nombre : " + aPivot.get(i).aClientes.get(j).getNombre() + "\n");
+                    reporte.write("Rut: " + aPivot.get(i).aClientes.get(j).getRut() + "\n");
+                    reporte.write("ID: " + aPivot.get(i).aClientes.get(j).getId() + "\n");
+                    reporte.write("Telefono: " + aPivot.get(i).aClientes.get(j).getTelefono() + "\n");
+                    reporte.write("Correo: " + aPivot.get(i).aClientes.get(j).getMail() + "\n");
+                    reporte.write("Contraseña: " + aPivot.get(i).aClientes.get(j).getPass() + "\n");
+                    reporte.flush();
+                    aux.flush();
+                    reporte.close();
+                    aux.close();
+                }
+            }
+        }
+        reporte.write("--------------------------------\n");
+        reporte.write("VENDEDORES \n");
+        
+        ArrayList<Cliente> cPivot = new ArrayList(); 
+        cPivot = vendedores;
+        
+        for(int k=0; k <= cPivot.size(); k++){
+            
+            reporte.write("Nombre : " + cPivot.get(k).getNombre() + " n");
+            reporte.write("Rut: " + cPivot.get(k).getRut() + "\n");
+            reporte.write("ID: " + cPivot.get(k).getId() + "\n");
+            reporte.write("Telefono: " + cPivot.get(k).getTelefono() + "\n");
+            reporte.write("Correo: " + cPivot.get(k).getMail() + "\n");
+            reporte.write("Contraseña: " + cPivot.get(k).getPass() + "\n");
+            reporte.flush();
+            aux.flush();
+            reporte.close();
+            aux.close();
+            if(cPivot.get(k).props.get(k).equals(true)){
+                reporte.write("Propiedad(es) de " + cPivot.get(k).getNombre());
+                for(int l=0; l <= cPivot.get(k).props.size(); l++){
+                    reporte.write("Tipo: " + cPivot.get(k).props.get(l).getTipo() + "\n");
+                    reporte.write("Precio: " + cPivot.get(k).props.get(l).getPrecio() + "\n");
+                    reporte.write("Numero de piezas: " + cPivot.get(k).props.get(l).getNumPiezas() + "\n");
+                    reporte.write("Numero de baños: " + cPivot.get(k).props.get(l).getNumBanos() + "\n");
+                    reporte.write("Direccion: " + cPivot.get(k).props.get(l).getDireccion() + "\n");
+                    reporte.write("Metros cuadrados: " + cPivot.get(k).props.get(l).getMetrosCuadrados() + "\n");
+                    reporte.write("ID: " + cPivot.get(k).props.get(l).getId() + "\n");
+                    reporte.write("Piso: " + cPivot.get(k).props.get(l).getPiso() + "\n");
+                    reporte.flush();
+                    aux.flush();
+                    reporte.close();
+                    aux.close();
+                }
+                
+            }
+        }
+    }
 }
+
+

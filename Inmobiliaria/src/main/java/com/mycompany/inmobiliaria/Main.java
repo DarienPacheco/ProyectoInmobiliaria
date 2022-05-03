@@ -34,6 +34,7 @@ public class Main {
             System.out.println("10. Eliminar Vendedor");
             System.out.println("11. Eliminar Asesor");
             System.out.println("12. Modificar");
+            System.out.println("13. Generar .txt");
             System.out.println("0. Cerrar");
             transformador = lector.readLine();
             opcion = Integer.parseInt(transformador);
@@ -150,6 +151,9 @@ public class Main {
                     break;
                 default:
                     System.out.println("El valor entregado no es valido."); 
+                    break;
+                case 13:
+                    Mercado.archivoReporte();
                     break;
             }
         }

@@ -5,10 +5,10 @@ import java.io.* ;
 
 public class Main {
     public static void main(String[] args)  throws IOException{
-        Propiedades casa = new Propiedades("300" ,"3", "7" , "casa" , "Las Condes", "1" , "300" );
+        Propiedad casa = new Propiedad("300" ,"3", "7" , "casa" , "Las Condes", "1" , "300" );
         Cliente ramon = new Cliente("Ramon julio" , "19.459.616-8", "935" ,"950860856" ,"ramonjuliotula@gmail.com" ,"darienrico123" );
         BoletaCompra primera = new BoletaCompra("300", "01", "935", "69");
-        Asesor juan= new Asesor("juan","17.354.123-k", "jj1817@gmail.com","yes","5","juanitochupameelpito");
+        //Asesor juan= new Asesor("juan","17.354.123-k", "jj1817@gmail.com","yes","5","juanitochupameelpito");
         Mercado Mercado= new Mercado();
         Cliente Cliente = new Cliente();
         
@@ -19,7 +19,7 @@ public class Main {
         int pivot;
         Asesor aPivot ;
         Cliente vPivot ;
-        Propiedades pPivot ;
+        Propiedad pPivot ;
         while(opcion != 0){
             System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar: \n");
             System.out.println("1. Mostrar Asesores");
@@ -97,6 +97,16 @@ public class Main {
                     }else{    
                         break;
                     }
+                case 8:
+                    System.out.println("Favor ingresar el rut del asesor al cual añadir un cliente");
+                    pivot=Mercado.buscaAsesor(lector.readLine());
+                    if(pivot!=0){
+                        pivot--;
+                        aPivot=Mercado.asesores.get(pivot);
+                        aPivot.agregarCliente();
+                        break;
+                    }
+                    break;
                 case 9:
                     Cliente.eliminarPropiedad();
                     break;
@@ -153,7 +163,7 @@ public class Main {
                     System.out.println("El valor entregado no es valido."); 
                     break;
                 case 13:
-                    Mercado.archivoReporte();
+                    Mercado.EscribeFichero();
                     break;
             }
         }

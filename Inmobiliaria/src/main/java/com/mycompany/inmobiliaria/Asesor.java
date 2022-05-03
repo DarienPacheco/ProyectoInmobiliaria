@@ -222,16 +222,51 @@ public class Asesor{
     }
     
     
-    
+    public void agregarCliente()throws IOException{
+        Cliente cPivot= new Cliente();
+        int pivot=0;
+        String sPivot;
+        System.out.println("Favor ingrese el nombre");
+        cPivot.setNombre(lector.readLine());
+        while(pivot==0){
+            System.out.println("Favor ingrese rut");
+            sPivot=lector.readLine();
+            pivot= buscarCliente(sPivot);
+            if(pivot==0){
+                cPivot.setRut(sPivot);
+                break;
+            } else{
+                System.out.println("Ese rut ya existe, favor ingrese uno diferente");
+            }
+        }
+        while(pivot==0){
+            System.out.println("Favor ingrese Id");
+            sPivot=lector.readLine();
+            pivot= buscarCliente(Integer.parseInt(sPivot));
+            if(pivot==0){
+                cPivot.setId(Integer.parseInt(sPivot));
+                break;
+            } else{
+                System.out.println("El id ingresado ya existe, favor ingrese uno diferente");
+            }
+        }
+        System.out.println("Favor ingrese telefono");
+        cPivot.setTelefono(Integer.parseInt(lector.readLine()));
+        System.out.println("Favor ingerese el mail");
+        cPivot.setMail(lector.readLine());
+        System.out.println("Favor ingrese contraseña");
+        cPivot.setPass(lector.readLine());
+        aClientes.add(cPivot);
+    }
     public void mostrarCliente(Cliente x){
-            System.out.println( "1.Nombre : " + x.getNombre() );
-            System.out.println( "2.Rut : " + x.getRut());
-            System.out.println( "3.Id : " + x.getId());
-            System.out.println( "4.Telefono : " + x.getTelefono());
-            System.out.println( "5.Mail : " + x.getMail());
-            System.out.println( "6.Contraseña : " + x.getPass());
-            System.out.println( "0.Salir");
-            System.out.println("--------------------------------\n");     
+        System.out.println( "1.Nombre : " + x.getNombre() );
+        System.out.println( "2.Rut : " + x.getRut());
+        System.out.println( "3.Id : " + x.getId());
+        System.out.println( "4.Telefono : " + x.getTelefono());
+        System.out.println( "5.Mail : " + x.getMail());
+        System.out.println( "6.Contraseña : " + x.getPass());
+        System.out.println( "0.Salir");
+        System.out.println("--------------------------------\n");     
     }
     
     

@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Mercado{
     private int[] demanda = new int[4];
-    HashMap <Integer,Propiedades> mapaPropiedades;
+    HashMap <Integer,Propiedad> mapaPropiedades;
     ArrayList<Asesor> asesores;
     ArrayList<Cliente> vendedores;
     
@@ -23,7 +23,7 @@ public class Mercado{
         mapaPropiedades = new HashMap();
     }
     
-    public Mercado (int a, int b, int c, int d,int id, Propiedades x, Asesor aa,Cliente vv){
+    public Mercado (int a, int b, int c, int d,int id, Propiedad x, Asesor aa,Cliente vv){
 
         this.demanda[0] = a;
         this.demanda[1] = b;
@@ -36,7 +36,7 @@ public class Mercado{
     
     public void busqueda(int id){
         if(mapaPropiedades.containsKey(id)){
-            Propiedades y = (Propiedades) mapaPropiedades.get(id);
+            Propiedad y = (Propiedad) mapaPropiedades.get(id);
             System.out.println("Su busqueda nos otorgo el siguiente resultado:");
             System.out.println("Casa : " + y.getId());
             System.out.println("Habitaciones: " + y.getNumPiezas());
@@ -53,7 +53,7 @@ public class Mercado{
         int contador = 1;
         int limite = mapaPropiedades.size();
         while(contador<=limite){
-            Propiedades y = (Propiedades) mapaPropiedades.get(contador);
+            Propiedad y = (Propiedad) mapaPropiedades.get(contador);
             if(supinf){
                 if(precio>= y.getPrecio()){
                     System.out.println("Su busqueda nos otorgo el siguiente resultado:");
@@ -82,7 +82,7 @@ public class Mercado{
         }
     }
     public void busqueda(int precioMin, int precioMax){
-        for (Propiedades pp : mapaPropiedades.values()) {
+        for (Propiedad pp : mapaPropiedades.values()) {
             if ((precioMin < pp.getPrecio()) && (pp.getPrecio() < precioMax)){
                 System.out.println("Su busqueda nos otorgo el siguiente resultado:");
                 System.out.println("Casa : " + pp.getId());
@@ -214,7 +214,7 @@ public class Mercado{
     }
     
     public void agregarPropiedad(int option, int posicion) throws IOException{
-        Propiedades pPivot = new Propiedades();
+        Propiedad pPivot = new Propiedad();
         Cliente vPivot = vendedores.get(posicion);
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));       
         System.out.println("Ingrese el precio de la propiedad");
@@ -293,7 +293,7 @@ public class Mercado{
         
         for(int i = 0; i < asesores.size(); i++){
             aPivot = asesores.get(i);
-            if(aPivot.getRut() == rut){
+            if(aPivot.getRut().equals(rut)){
                 asesores.remove(i);
             }
         }
@@ -421,100 +421,87 @@ public class Mercado{
         }    
     }
     
-        public void mostrarVendedor(Cliente x){
-            System.out.println( "1.Nombre : " + x.getNombre() );
-            System.out.println( "2.Rut : " + x.getRut());
-            System.out.println( "3.Id : " + x.getId());
-            System.out.println( "4.Telefono : " + x.getTelefono());
-            System.out.println( "5.Mail : " + x.getMail());
-            System.out.println( "6.Contraseña : " + x.getPass());
-            System.out.println( "0.Salir");
-            System.out.println("--------------------------------\n");         
+    public void mostrarVendedor(Cliente x){
+        System.out.println( "1.Nombre : " + x.getNombre() );
+        System.out.println( "2.Rut : " + x.getRut());
+        System.out.println( "3.Id : " + x.getId());
+        System.out.println( "4.Telefono : " + x.getTelefono());
+        System.out.println( "5.Mail : " + x.getMail());
+        System.out.println( "6.Contraseña : " + x.getPass());
+        System.out.println( "0.Salir");
+        System.out.println("--------------------------------\n");         
     }
     
-    public void archivoReporte() throws IOException{
+    
+    public void EscribeFichero() throws IOException{
         
-        File file = new File ("registro.txt");
-        FileWriter aux = new FileWriter(file, true);
-        BufferedWriter reporte = new BufferedWriter(aux);
-        
-        ArrayList<Asesor> aPivot = new ArrayList();
-        aPivot = asesores;
-        
-        /*int j = aPivot.size();
-        reporte.write("tamaño es : " + j);*/
-        
-        reporte.flush();
-        aux.flush();
-        reporte.close(); 
-        aux.close();
-        reporte.write("ASESORES \n");
-        for(int i=0; i < aPivot.size(); i++){
-            
-            reporte.write("Nombre Asesor: " + aPivot.get(i).getNombre() + "\n");
-            reporte.write("Rut: " + aPivot.get(i).getRut() + "\n");
-            reporte.write("Correo: " + aPivot.get(i).getMail() + "\n");
-            reporte.write("Contraseña: " + aPivot.get(i).getPass() + "\n");
-            reporte.write("Disponibilidad: " + aPivot.get(i).getDisponibilidad() + "\n");
-            reporte.write("Clasificacion: " + aPivot.get(i).getClasificacion() + "\n");
-            reporte.flush();
-            aux.flush();
-            reporte.close();
-            aux.close();
-            if(aPivot.get(i).aClientes.get(i).equals(true)){
-                reporte.write("Cliente(s) de " + aPivot.get(i).getNombre() + ": \n");
-                for(int j=0; j <= aPivot.get(i).aClientes.size(); j++){
-                    reporte.write("Nombre : " + aPivot.get(i).aClientes.get(j).getNombre() + "\n");
-                    reporte.write("Rut: " + aPivot.get(i).aClientes.get(j).getRut() + "\n");
-                    reporte.write("ID: " + aPivot.get(i).aClientes.get(j).getId() + "\n");
-                    reporte.write("Telefono: " + aPivot.get(i).aClientes.get(j).getTelefono() + "\n");
-                    reporte.write("Correo: " + aPivot.get(i).aClientes.get(j).getMail() + "\n");
-                    reporte.write("Contraseña: " + aPivot.get(i).aClientes.get(j).getPass() + "\n");
-                    reporte.flush();
-                    aux.flush();
-                    reporte.close();
-                    aux.close();
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        Asesor aPivot;
+        Cliente cPivot;
+        Propiedad pPivot;
+        fichero = new FileWriter("prueba.txt");
+        pw = new PrintWriter(fichero);
+        // AQUI SE ESCRIBEN LOS CLIENTES DE UN ASESOR JUNTO CON EL ASESOR CORRESPONDIENTE
+        if(!asesores.isEmpty()){
+            for(int i=0; i < asesores.size(); i++){
+                aPivot = asesores.get(i);
+                pw.write("Nombre Asesor: " + aPivot.getNombre() + "\n");
+                pw.write("Rut: " + aPivot.getRut() + "\n");
+                pw.write("Correo: " + aPivot.getMail() + "\n");
+                pw.write("Contraseña: " + aPivot.getPass() + "\n");
+                pw.write("Disponibilidad: " + aPivot.getDisponibilidad() + "\n");
+                pw.write("Clasificacion: " + aPivot.getClasificacion() + "\n");
+                pw.write("\n===============================\n");
+
+                if(!aPivot.aClientes.isEmpty()){
+                    pw.write("Clientes:\n");
+                    for(int j=0; j < aPivot.aClientes.size(); j++){
+                        cPivot = aPivot.aClientes.get(j);
+                        pw.write("Nombre : " + cPivot.getNombre() + "\n");
+                        pw.write("Rut: " + cPivot.getRut() + "\n");
+                        pw.write("ID: " + cPivot.getId() + "\n");
+                        pw.write("Telefono: " + cPivot.getTelefono() + "\n");
+                        pw.write("Correo: " + cPivot.getMail() + "\n");
+                        pw.write("Contraseña: " + cPivot.getPass() + "\n");
+                        pw.write("\n*******************************\n");
+                    }
                 }
             }
         }
-        reporte.write("--------------------------------\n");
-        reporte.write("VENDEDORES \n");
-        
-        ArrayList<Cliente> cPivot = new ArrayList(); 
-        cPivot = vendedores;
-        
-        for(int k=0; k <= cPivot.size(); k++){
             
-            reporte.write("Nombre : " + cPivot.get(k).getNombre() + " n");
-            reporte.write("Rut: " + cPivot.get(k).getRut() + "\n");
-            reporte.write("ID: " + cPivot.get(k).getId() + "\n");
-            reporte.write("Telefono: " + cPivot.get(k).getTelefono() + "\n");
-            reporte.write("Correo: " + cPivot.get(k).getMail() + "\n");
-            reporte.write("Contraseña: " + cPivot.get(k).getPass() + "\n");
-            reporte.flush();
-            aux.flush();
-            reporte.close();
-            aux.close();
-            if(cPivot.get(k).props.get(k).equals(true)){
-                reporte.write("Propiedad(es) de " + cPivot.get(k).getNombre());
-                for(int l=0; l <= cPivot.get(k).props.size(); l++){
-                    reporte.write("Tipo: " + cPivot.get(k).props.get(l).getTipo() + "\n");
-                    reporte.write("Precio: " + cPivot.get(k).props.get(l).getPrecio() + "\n");
-                    reporte.write("Numero de piezas: " + cPivot.get(k).props.get(l).getNumPiezas() + "\n");
-                    reporte.write("Numero de baños: " + cPivot.get(k).props.get(l).getNumBanos() + "\n");
-                    reporte.write("Direccion: " + cPivot.get(k).props.get(l).getDireccion() + "\n");
-                    reporte.write("Metros cuadrados: " + cPivot.get(k).props.get(l).getMetrosCuadrados() + "\n");
-                    reporte.write("ID: " + cPivot.get(k).props.get(l).getId() + "\n");
-                    reporte.write("Piso: " + cPivot.get(k).props.get(l).getPiso() + "\n");
-                    reporte.flush();
-                    aux.flush();
-                    reporte.close();
-                    aux.close();
+        
+        // AQUI SE ESCRIBEN LAS PROPIEDADES DE LOS VENDEDORES JUNTO CON LOS VENDEDORES
+        if(!vendedores.isEmpty()){
+            for(int i=0; i < vendedores.size(); i++){
+                cPivot = vendedores.get(i);
+                pw.write("Nombre : " + cPivot.getNombre() + " n");
+                pw.write("Rut: " + cPivot.getRut() + "\n");
+                pw.write("ID: " + cPivot.getId() + "\n");
+                pw.write("Telefono: " + cPivot.getTelefono() + "\n");
+                pw.write("Correo: " + cPivot.getMail() + "\n");
+                pw.write("Contraseña: " + cPivot.getPass() + "\n");
+                pw.write("\n===============================\n");
+                if(!cPivot.props.isEmpty()){
+                    pw.write("Propiedad(es) de " + cPivot.getNombre());
+                    for(int j=0; j < cPivot.props.size(); j++){
+                        pPivot = cPivot.props.get(j);
+                        pw.write("Tipo: " + pPivot.getTipo() + "\n");
+                        pw.write("Precio: " + pPivot.getPrecio() + "\n");
+                        pw.write("Numero de piezas: " + pPivot.getNumPiezas() + "\n");
+                        pw.write("Numero de baños: " + pPivot.getNumBanos() + "\n");
+                        pw.write("Direccion: " + pPivot.getDireccion() + "\n");
+                        pw.write("Metros cuadrados: " + pPivot.getMetrosCuadrados() + "\n");
+                        pw.write("ID: " + pPivot.getId() + "\n");
+                        pw.write("Piso: " + pPivot.getPiso() + "\n");
+                        pw.write("\n*******************************\n");
+                    }
+
                 }
-                
             }
         }
+            
+        fichero.close();
+
     }
 }
-
-

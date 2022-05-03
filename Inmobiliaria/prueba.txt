@@ -1,0 +1,17 @@
+Nombre Asesor: XDDDDDDDDDD
+Rut: 123
+Correo: ashjkdgasd
+Contraseña: ashjkgasd
+Disponibilidad: sdajkgd
+Clasificacion: asdhjkasd
+
+===============================
+Clientes:
+Nombre : darien
+Rut: 321
+ID: 1
+Telefono: 2349
+Correo: asjkdasd
+Contraseña: sldkfhsdjkf
+
+*******************************

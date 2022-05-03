@@ -10,7 +10,7 @@ public class Cliente{
     private int telefono;
     private String mailCliente;
     private String passCliente;
-    ArrayList<Propiedades> props;
+    ArrayList<Propiedad> props;
     BufferedReader lector = new BufferedReader(new InputStreamReader(System.in)); 
     
     public Cliente (String nombre, String rut, String id, String telefono, String mail, String pass){
@@ -80,7 +80,7 @@ public class Cliente{
         if(props.size()==0){
             System.out.println("La lista se encuentra vacia");
         }
-        Propiedades pPivot;
+        Propiedad pPivot;
         int i = 0 ;
         while(i < props.size()){
             pPivot = props.get(i);
@@ -98,7 +98,7 @@ public class Cliente{
     }
     
     public void eliminarPropiedad() throws IOException{
-        Propiedades pPivot = new Propiedades();
+        Propiedad pPivot = new Propiedad();
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese Id de la Propiedad");
         int id = Integer.parseInt(lector.readLine());
@@ -114,7 +114,7 @@ public class Cliente{
             System.out.println("La lista se encuentra vacia");
             return 0;
         }
-        Propiedades pPivot;
+        Propiedad pPivot;
         int i= 0;
         boolean verificador = false;
         while(i< props.size()){
@@ -137,7 +137,7 @@ public class Cliente{
     public void modificarPropiedades() throws IOException{
         int x=0,opcion=1,i,y;
         String sPivot;
-        Propiedades pPivot;
+        Propiedad pPivot;
         while(opcion!=0){
             mostrarPropiedades();
             System.out.println("Favor ingrese el rut del cliente al cual modificar");
@@ -189,7 +189,7 @@ public class Cliente{
     }
     
     
-    public void mostrarPropiedad(Propiedades x){
+    public void mostrarPropiedad(Propiedad x){
             System.out.println( "1.Precio : " + x.getPrecio());
             System.out.println( "2.Tamaño : " + x.getMetrosCuadrados() + "Metros cuadrados");
             System.out.println( "3.Piezas : " + x.getNumPiezas());

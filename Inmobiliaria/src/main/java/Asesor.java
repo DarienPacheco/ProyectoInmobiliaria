@@ -9,6 +9,10 @@ public class Asesor {
     private String disponibilidad;
     private String clasificacion;
     public ArrayList <Vendedor> vendedores;
+    
+    public Asesor() {
+        vendedores = new ArrayList();
+    }
  
     public Asesor(String nombre, String rut, String mail, String pass, String disponibilidad, String clasificacion){
         this.nombre = nombre;

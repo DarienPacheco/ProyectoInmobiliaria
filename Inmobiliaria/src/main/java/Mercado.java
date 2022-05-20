@@ -18,14 +18,39 @@ public class Mercado {
     }
     
     
-    
     public void agregarAsesor() throws IOException{
+        Asesor aPivot = new Asesor();
+        System.out.println("Ingrese Nombre");
+        aPivot.setNombre(lector.readLine());
+        System.out.println("Ingrese Rut");
+        aPivot.setRut(lector.readLine());
+        System.out.println("Ingrese Mail");
+        aPivot.setMail(lector.readLine());
+        System.out.println("Ingrese Contraseña");
+        aPivot.setPass(lector.readLine());
+        System.out.println("Ingrese Disponibilidad");
+        aPivot.setDisponibilidad(lector.readLine());
+        System.out.println("Ingrese Clasificacion");
+        aPivot.setClasificacion(lector.readLine());
+        asesores.add(aPivot);
         
     }
     
     public void agregarVendedores() throws IOException{
         Vendedor vPivot = new Vendedor();
-        
+        System.out.println("Ingrese Nombre");
+        vPivot.setNombre(lector.readLine());
+        System.out.println("Ingrese Rut");
+        vPivot.setRut(lector.readLine());
+        System.out.println("Ingrese Id");
+        vPivot.setIdCliente(Integer.parseInt(lector.readLine()));
+        System.out.println("Ingrese Telefono");
+        vPivot.setTelefono(Integer.parseInt(lector.readLine()));
+        System.out.println("Ingrese Mail");  
+        vPivot.setMail(lector.readLine());
+        System.out.println("Ingrese Contraseña");
+        vPivot.setPass(lector.readLine());
+        vendedores.add(vPivot);
     
     }
 

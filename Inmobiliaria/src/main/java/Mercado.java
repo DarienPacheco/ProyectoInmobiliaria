@@ -9,7 +9,7 @@ public class Mercado {
     ArrayList<Vendedor> vendedores;
     ArrayList<Asesor> asesores;
     //Se ocupa object, ya que propiedades va a guardar tanto Deptos como Casas.
-    HashMap<Integer,Object> propiedades;
+    HashMap<Integer,Casa> propiedades;
     
     public Mercado(){
         vendedores = new ArrayList();

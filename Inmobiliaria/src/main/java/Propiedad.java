@@ -1,5 +1,5 @@
 
-public class Propiedad {
+public abstract class Propiedad {
     private int precio;
     private int numBanos;
     private int numPiezas;

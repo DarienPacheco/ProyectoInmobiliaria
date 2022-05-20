@@ -1,3 +1,5 @@
+package com.mycompany.inmobiliaria;
+
 
 public class Comprador extends Cliente {
     

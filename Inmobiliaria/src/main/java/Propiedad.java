@@ -1,3 +1,5 @@
+package com.mycompany.inmobiliaria;
+
 
 public abstract class Propiedad {
     private int precio;

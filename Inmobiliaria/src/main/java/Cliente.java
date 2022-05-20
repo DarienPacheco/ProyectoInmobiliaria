@@ -1,3 +1,4 @@
+package com.mycompany.inmobiliaria;
 
 public abstract class Cliente {
     

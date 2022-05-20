@@ -1,3 +1,5 @@
+package com.mycompany.inmobiliaria;
+
 import java.util.*;
 import java.io.*;
 
@@ -14,9 +16,5 @@ public class Mercado {
         asesores = new ArrayList();
         propiedades = new HashMap();
     }
-    
-    
-    
-    
-    
+
 }

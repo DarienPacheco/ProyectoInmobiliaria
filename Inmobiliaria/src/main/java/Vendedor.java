@@ -4,10 +4,11 @@ import java.util.*;
 
 
 public class Vendedor extends Cliente{
-    ArrayList<Casa> propiedades;
+    ArrayList<Propiedad> propiedades;
     
     public Vendedor(String nombre, String rut, int idCliente, int telefono, String mail, String pass){
         super(nombre, rut, idCliente, telefono, mail, pass);
+        propiedades = new ArrayList();
     }
     public Vendedor(){
         super(null,null,0,0,null,null);

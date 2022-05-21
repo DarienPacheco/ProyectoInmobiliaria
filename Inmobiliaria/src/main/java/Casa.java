@@ -1,16 +1,54 @@
 package com.mycompany.inmobiliaria;
 
+import java.io.*;
+
 public class Casa extends Propiedad{
-    
+        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         public Casa( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos){
         super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos);
         
     }
 
-    public void generarPrecio(){
+    public void generarPrecio()throws IOException{
         int pEstimado;
-        pEstimado = getArea()*((getNumBanos()*5)+(getNumPiezas()*9)+(getArea()*50)+ (getPisos()*20));
-        setPrecio(pEstimado);
+        int opcion=1;
+        switch(getZona()){
+            case 1:
+                pEstimado=250*getArea();
+                break;
+            case 2:
+                pEstimado=350*getArea();
+                break;
+            case 3:
+                pEstimado=500*getArea();
+                break;
+            default:
+                System.out.println("No se ha podido calcular el valor de la casa");
+                return;
+        }
+        while (opcion!=0){
+            if(getPrecio()!=pEstimado){
+                System.out.println("El valor de la Casa es diferente a nuestras recomendaciones :"+getPrecio() );
+                System.out.println("Desea cambiarlo por nuestro precio recomendado "+ pEstimado + "?");
+                System.out.println("1. Si y Salir.");
+                System.out.println("0. No y Salir");
+                opcion=Integer.parseInt(lector.readLine());
+                switch(opcion){
+                    case 1: 
+                        setPrecio(pEstimado);
+                        System.out.println("Cambio realizado.");
+                        return;
+                    case 0:
+                        return;
+                    default:
+                        System.out.println("El valor entregado no se encuentra dentro de las opciones");
+                        break;
+                }
+            }else{
+                System.out.println("El precio de la Casa es ideal segun nuestros criterios.");
+                return;
+            }
+        }
     }
     
 }

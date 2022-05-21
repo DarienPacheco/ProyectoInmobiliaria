@@ -1,5 +1,7 @@
 package com.mycompany.inmobiliaria;
 
+import java.io.IOException;
+
 
 public abstract class Propiedad {
     private int precio;
@@ -86,5 +88,5 @@ public abstract class Propiedad {
         this.pisos = pisos;
     }
     
-    public abstract void generarPrecio();
+    public abstract void generarPrecio()throws IOException;
 }

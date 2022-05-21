@@ -74,7 +74,7 @@ public class Main {
         dPivot = new Departamento(38000,3,4,"Santiago, La Florida",18,84,2,1,3);
         mercado.propiedades.put(18, dPivot);
         vPivot.propiedades.add(dPivot);
-        cPivot = new Casa(43000,2,3,"Los Rios, Valdivia",15,80,2,2);
+        cPivot = new Casa(34000,2,3,"Los Rios, Valdivia",15,80,2,2);
         mercado.propiedades.put(15, cPivot);
         vPivot.propiedades.add(cPivot);
         

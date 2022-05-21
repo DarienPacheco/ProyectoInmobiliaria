@@ -3,12 +3,12 @@ package com.mycompany.inmobiliaria;
 import java.io.* ;
 import java.util.*;
  
-public class Asesor {
+public class Asesor implements Imprimable, Disponibilidad{
     private String nombre;
     private String rut;
     private String mail;
     private String pass;
-    private String disponibilidad;
+    private boolean disponibilidad;
     private String clasificacion;
     public ArrayList <Vendedor> vendedores;
     
@@ -16,7 +16,7 @@ public class Asesor {
         vendedores = new ArrayList();
     }
  
-    public Asesor(String nombre, String rut, String mail, String pass, String disponibilidad, String clasificacion){
+    public Asesor(String nombre, String rut, String mail, String pass, boolean disponibilidad, String clasificacion){
         this.nombre = nombre;
         this.rut = rut;
         this.mail = mail;
@@ -58,11 +58,11 @@ public class Asesor {
         this.pass = pass;
     }
 
-    public String getDisponibilidad() {
+    public boolean getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
+    public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 
@@ -81,6 +81,12 @@ public class Asesor {
     public void setVendedores(ArrayList<Vendedor> vendedores) {
         this.vendedores = vendedores;
     }
+
+    @Override
+    public String imprimir() {
+        return this.nombre + " - " + this.rut + " - " + this.clasificacion + " - " + this.disponibilidad + " - " + this.mail;
+    }
+
     
- 
+    
 }

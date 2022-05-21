@@ -3,7 +3,7 @@ package com.mycompany.inmobiliaria;
 import java.util.*;
 
 
-public class Vendedor extends Cliente{
+public class Vendedor extends Cliente {
     ArrayList<Propiedad> propiedades;
     
     public Vendedor(String nombre, String rut, int idCliente, int telefono, String mail, String pass){
@@ -19,5 +19,9 @@ public class Vendedor extends Cliente{
         
         System.out.println(getNombre());
     }
+
+    
+
+    
     
 }

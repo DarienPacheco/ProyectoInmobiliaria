@@ -2,10 +2,10 @@ package com.mycompany.inmobiliaria;
 
 import java.io.*;
 
-public class Casa extends Propiedad{
+public class Casa extends Propiedad implements Disponibilidad{
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
-        public Casa( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos){
-        super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos);
+        public Casa( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos, boolean disponibilidad){
+        super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos, disponibilidad);
         
     }
 
@@ -50,5 +50,7 @@ public class Casa extends Propiedad{
             }
         }
     }
+
+    
     
 }

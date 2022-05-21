@@ -4,13 +4,13 @@ package com.mycompany.inmobiliaria;
 import java.io.*;
 
 
-public class Departamento extends Propiedad{
+public class Departamento extends Propiedad implements Disponibilidad{
     
     private int planta;
     BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
     
-    public Departamento( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos,int planta){
-        super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos);
+    public Departamento( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos,int planta, boolean disponibilidad){
+        super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos, disponibilidad);
         this.planta = planta;
     }
 
@@ -64,4 +64,6 @@ public class Departamento extends Propiedad{
                 }
             }
         }
-    }
+
+    
+}

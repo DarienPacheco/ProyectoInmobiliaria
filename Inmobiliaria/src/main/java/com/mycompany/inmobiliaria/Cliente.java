@@ -1,6 +1,6 @@
 package com.mycompany.inmobiliaria;
 
-public abstract class Cliente {
+public abstract class Cliente{
     
     private String nombre;
     private String rut;
@@ -68,4 +68,6 @@ public abstract class Cliente {
     }
    
     public abstract void mostrarNombre();
+    
+    
 }

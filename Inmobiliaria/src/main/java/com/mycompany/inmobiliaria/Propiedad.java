@@ -12,8 +12,8 @@ public abstract class Propiedad {
     private int area;
     private int zona;
     private int pisos;
-    
-    public Propiedad(int precio, int numBanos, int numPiezas, String direccion, int idPropiedad, int area, int zona, int pisos){
+    private boolean disponibilidad;
+    public Propiedad(int precio, int numBanos, int numPiezas, String direccion, int idPropiedad, int area, int zona, int pisos, boolean disponibilidad){
         
         this.precio = precio;
         this.numBanos = numBanos;
@@ -23,6 +23,7 @@ public abstract class Propiedad {
         this.area = area;
         this.zona = zona;
         this.pisos = pisos;
+        this.disponibilidad = disponibilidad;
     }
     public int getPrecio() {
         return precio;
@@ -86,6 +87,14 @@ public abstract class Propiedad {
 
     public void setPisos(int pisos) {
         this.pisos = pisos;
+    }
+
+    public boolean isDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(boolean disponibilidad) {
+        this.disponibilidad = disponibilidad;
     }
     
     public abstract void generarPrecio()throws IOException;

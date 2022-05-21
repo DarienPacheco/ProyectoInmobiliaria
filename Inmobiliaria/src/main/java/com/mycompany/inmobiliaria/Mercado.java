@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 
-public class Mercado {
+public class Mercado implements Imprimable{
     BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
     ArrayList<Vendedor> vendedores;
     ArrayList<Asesor> asesores;
@@ -17,8 +17,7 @@ public class Mercado {
         propiedades = new HashMap();
         
     }
-    
-    
+    /*
     public void agregarAsesor() throws IOException{
         Asesor aPivot = new Asesor();
         System.out.println("Ingrese Nombre");
@@ -35,7 +34,7 @@ public class Mercado {
         aPivot.setClasificacion(lector.readLine());
         asesores.add(aPivot);
         
-    }
+    }*/
     
     public void agregarVendedores() throws IOException{
         Vendedor vPivot = new Vendedor();
@@ -55,4 +54,8 @@ public class Mercado {
     
     }
 
+    @Override
+    public String imprimir() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

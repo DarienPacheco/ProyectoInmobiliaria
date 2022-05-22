@@ -58,7 +58,7 @@ public class Asesor implements Imprimable, Disponibilidad{
         this.pass = pass;
     }
 
-    public boolean getDisponibilidad() {
+    public boolean isDisponibilidad() {
         return disponibilidad;
     }
 
@@ -87,6 +87,15 @@ public class Asesor implements Imprimable, Disponibilidad{
         return this.nombre + " - " + this.rut + " - " + this.clasificacion + " - " + this.disponibilidad + " - " + this.mail;
     }
 
+    
+    public void reservar(){
+        if(isDisponibilidad()== noDisp){
+            System.out.println("El Asesor no se encuentra disponible.");
+        }else{
+            setDisponibilidad(noDisp);
+            System.out.println("Su reserva se ha hecho con exito");
+        }
+    }
     
     
 }

@@ -65,5 +65,12 @@ public class Departamento extends Propiedad implements Disponibilidad{
             }
         }
 
-    
+    public void reservar(){
+        if(isDisponibilidad()== noDisp){
+            System.out.println("El departamento no se encuentra disponible.");
+        }else{
+            setDisponibilidad(noDisp);
+            System.out.println("Su reserva se ha hecho con exito");
+        }
+    }
 }

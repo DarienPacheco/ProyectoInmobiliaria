@@ -13,4 +13,6 @@ public interface Disponibilidad {
     public static final boolean Disp = true;
     public static final boolean noDisp = false;
     
+    
+    public void reservar();
 }

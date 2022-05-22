@@ -3,7 +3,7 @@ package com.mycompany.inmobiliaria;
 import java.io.IOException;
 
 
-public abstract class Propiedad {
+public abstract class Propiedad implements Disponibilidad{
     private int precio;
     private int numBanos;
     private int numPiezas;
@@ -98,4 +98,14 @@ public abstract class Propiedad {
     }
     
     public abstract void generarPrecio()throws IOException;
+    
+   public void reservar(){
+        if(isDisponibilidad()== noDisp){
+            System.out.println("El departamento no se encuentra disponible.");
+        }else{
+            setDisponibilidad(noDisp);
+            System.out.println("Su reserva se ha hecho con exito");
+        }
+    } 
+   
 }

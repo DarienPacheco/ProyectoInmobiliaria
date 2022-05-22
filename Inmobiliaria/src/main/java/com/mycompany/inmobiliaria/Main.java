@@ -120,7 +120,8 @@ public class Main {
         
         int opcion=1;
         int opcion2=1;
-        
+        int iPivot;
+        Propiedad pPivot;
         while(opcion!=0){
             opcion2=1;
             System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");
@@ -133,8 +134,8 @@ public class Main {
                     while(opcion2!=0){
                         System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");
                         System.out.println("1. Mostrar ultimo Asesor agregado");
-                        System.out.println("2. Mostrar ultimo Vendedor agregado");
-                        System.out.println("3. Mostrar xxxx");
+                        System.out.println("2. Reservar Visita a Propiedad");
+                        System.out.println("3. Reservar Asesor");
                         opcion2=Integer.parseInt(lector.readLine());
                         switch(opcion2){
                             case 0:
@@ -144,10 +145,16 @@ public class Main {
                                 impresora.imprimirObjetoPorImpresora();
                                 break;
                             case 2:
-                                
+                                System.out.println("Favor ingrese el id de la propiedad");
+                                iPivot = Integer.parseInt(lector.readLine());
+                                if(mercado.propiedades.containsKey(iPivot)){
+                                   pPivot = mercado.propiedades.get(iPivot);
+                                   pPivot.reservar();
+                                }else{
+                                    System.out.println("El valor ingresado no existe.");
+                                }     
                                 break;
-
-                            default:
+                           default:
                                 System.out.println("El valor entregado no es valido."); 
                                 break;
                         }

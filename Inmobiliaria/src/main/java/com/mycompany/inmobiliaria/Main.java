@@ -125,7 +125,7 @@ public class Main {
         while(opcion!=0){
             opcion2=1;
             System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");
-            System.out.println("1. Mostrar");
+            System.out.println("1. Menu");
             opcion=Integer.parseInt(lector.readLine());
             switch(opcion){
                 case 0:
@@ -135,7 +135,8 @@ public class Main {
                         System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");
                         System.out.println("1. Mostrar ultimo Asesor agregado");
                         System.out.println("2. Reservar Visita a Propiedad");
-                        System.out.println("3. Reservar Asesor");
+                        System.out.println("3. Busqueda Limitada");
+                        System.out.println("4. Una Ganga!");
                         opcion2=Integer.parseInt(lector.readLine());
                         switch(opcion2){
                             case 0:
@@ -154,6 +155,16 @@ public class Main {
                                     System.out.println("El valor ingresado no existe.");
                                 }     
                                 break;
+                            case 3:
+                                System.out.println("Favor ingrese la busqueda que quiere tomar");
+                                System.out.println("1. Casas");
+                                System.out.println("2. Departamentos");
+                                mercado.busquedaLimitada(Integer.parseInt(lector.readLine()));
+                                break;
+                            case 4:
+                                mercado.Ganga();
+                                break;
+                                
                            default:
                                 System.out.println("El valor entregado no es valido."); 
                                 break;

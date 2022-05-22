@@ -99,7 +99,7 @@ public abstract class Propiedad implements Disponibilidad{
     
     public abstract void generarPrecio()throws IOException;
     
-   public void reservar(){
+    public void reservar(){
         if(isDisponibilidad()== noDisp){
             System.out.println("El departamento no se encuentra disponible.");
         }else{

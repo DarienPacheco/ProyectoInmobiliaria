@@ -58,4 +58,71 @@ public class Mercado implements Imprimable{
     public String imprimir() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+    public void busquedaLimitada(int opcion){
+        int contador=1;
+        Propiedad pPivot;
+        if(opcion==1){
+            while(contador<=propiedades.size()){
+                pPivot = propiedades.get(contador);
+                if(pPivot instanceof Casa){
+                    System.out.println("Casa : "+ pPivot.getIdPropiedad());
+                    System.out.println("Dirección : " + pPivot.getDireccion());
+                    System.out.println("Area : " + pPivot.getArea());
+                    System.out.println("Numero Piezas : " + pPivot.getNumPiezas() );
+                    System.out.println("Numero Baños : " + pPivot.getNumBanos());
+                    System.out.println("Precio : " + pPivot.getPrecio());
+                    System.out.println("Disponibilidad : " + pPivot.isDisponibilidad());
+                    System.out.println("-----------------------------------");
+                }
+                contador++;
+            }
+            return;
+        }else if(opcion==2){
+            while(contador<=propiedades.size()){
+                pPivot = propiedades.get(contador);
+                if(pPivot instanceof Departamento){
+                    System.out.println("Casa : "+ pPivot.getIdPropiedad());
+                    System.out.println("Dirección : " + pPivot.getDireccion());
+                    System.out.println("Area : " + pPivot.getArea());
+                    System.out.println("Numero Piezas : " + pPivot.getNumPiezas() );
+                    System.out.println("Numero Baños : " + pPivot.getNumBanos());
+                    System.out.println("Precio : " + pPivot.getPrecio());
+                    System.out.println("Disponibilidad : " + pPivot.isDisponibilidad());
+                    System.out.println("-----------------------------------");
+                }
+                contador++;
+            }
+            return;
+        }
+        System.out.println("El valor ingresado no esta dentro de los aceptados.");
+        return;
+    }
+    
+    public void Ganga(){
+        int contador=1;
+        int ganga=0;
+        Propiedad pPivot,pIdeal=propiedades.get(contador);
+        while(contador<=propiedades.size()){
+            pPivot= propiedades.get(contador);
+            
+            if(contador == 1){
+                ganga=pPivot.getPrecio();
+            }
+            if(pPivot.getPrecio()<=ganga){
+                ganga=pPivot.getPrecio();
+                pIdeal=pPivot;
+            }
+           contador++;
+        }
+        System.out.println("TE RECOMENDAMOS!!!!!!!!!!!!!:");
+        System.out.println("Propiedad : "+ pIdeal.getIdPropiedad());
+        System.out.println("Dirección : " + pIdeal.getDireccion());
+        System.out.println("Area : " + pIdeal.getArea());
+        System.out.println("Numero Piezas : " + pIdeal.getNumPiezas() );
+        System.out.println("Numero Baños : " + pIdeal.getNumBanos());
+        System.out.println("Precio : " + pIdeal.getPrecio());
+        System.out.println("Disponibilidad : " + pIdeal.isDisponibilidad());
+        System.out.println("-----------------------------------");
+    }
 }

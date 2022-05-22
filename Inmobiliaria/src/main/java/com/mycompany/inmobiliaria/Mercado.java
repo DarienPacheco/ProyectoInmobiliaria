@@ -99,7 +99,7 @@ public class Mercado implements Imprimable{
         return;
     }
     
-    public void Ganga(){
+    public void ganga(){
         int contador=1;
         int ganga=0;
         Propiedad pPivot,pIdeal=propiedades.get(contador);

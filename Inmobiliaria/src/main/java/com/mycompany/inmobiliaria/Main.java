@@ -162,7 +162,7 @@ public class Main {
                                 mercado.busquedaLimitada(Integer.parseInt(lector.readLine()));
                                 break;
                             case 4:
-                                mercado.Ganga();
+                                mercado.ganga();
                                 break;
                                 
                            default:

@@ -13,6 +13,10 @@ public class Departamento extends Propiedad implements Disponibilidad{
         super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos, disponibilidad);
         this.planta = planta;
     }
+    public Departamento(){
+        super(0,0,0,null,0,0,0,0,false);
+        this.planta=0;
+    }
 
     public int getPlanta() {
         return planta;

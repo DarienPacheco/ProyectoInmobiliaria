@@ -8,6 +8,7 @@ public abstract class Cliente{
     private int telefono;
     private String mail;
     private String pass;
+    private Asesor asesor;
 
     public Cliente(String nombre, String rut, int idCliente, int telefono, String mail, String pass) {
         this.nombre = nombre;
@@ -16,6 +17,7 @@ public abstract class Cliente{
         this.telefono = telefono;
         this.mail = mail;
         this.pass = pass;
+        this.asesor = new Asesor();
     }
 
 
@@ -65,6 +67,13 @@ public abstract class Cliente{
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+    public Asesor getAsesor(){
+        return asesor;
+    }
+    
+    public void setAsesor(Asesor asesor){
+        this.asesor = asesor;
     }
    
     public abstract void mostrarNombre();

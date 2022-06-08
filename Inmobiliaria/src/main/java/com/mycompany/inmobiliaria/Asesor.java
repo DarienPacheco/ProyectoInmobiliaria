@@ -10,19 +10,21 @@ public class Asesor implements Imprimable, Disponibilidad{
     private String pass;
     private boolean disponibilidad;
     private String clasificacion;
+    private int id;
     public ArrayList <Vendedor> vendedores;
     
     public Asesor() {
         vendedores = new ArrayList();
     }
  
-    public Asesor(String nombre, String rut, String mail, String pass, boolean disponibilidad, String clasificacion){
+    public Asesor(String nombre, String rut, String mail, String pass, boolean disponibilidad, String clasificacion, int id){
         this.nombre = nombre;
         this.rut = rut;
         this.mail = mail;
         this.pass = pass;
         this.disponibilidad = disponibilidad;
         this.clasificacion = clasificacion;
+        this.id = id;
         vendedores = new ArrayList();
     }
 
@@ -81,6 +83,13 @@ public class Asesor implements Imprimable, Disponibilidad{
     public void setVendedores(ArrayList<Vendedor> vendedores) {
         this.vendedores = vendedores;
     }
+    
+    public void setId(int Id){
+        this.id = Id;
+    }
+    public int getId(){
+        return id;
+    }
 
     @Override
     public String imprimir() {
@@ -97,5 +106,25 @@ public class Asesor implements Imprimable, Disponibilidad{
         }
     }
     
+    //Permite buscar vendedores por rut y veriricar la existencia de un rut en caso de crear uno nuevo
+    public Vendedor eliminarVendedor(String rut){
+        Vendedor vPivot = null;
+        int i=0;
+        //Ocupa un ciclo para encontrar el rut del vendedor, una vez encontrado, lo eliminado ocupando su posicion.
+        while(i <= vendedores.size()){
+            vPivot = vendedores.get(i);
+            if(vPivot.getRut().equals(rut)){
+                System.out.println("Rut encontrado.");
+                vendedores.remove(i);
+                //avisa una vez encontrado
+                System.out.println("Vendedor Eliminado de Asesor");
+                return vPivot;
+            }else{
+                i++; 
+            }  
+        }
+        System.out.println("Vendedor no encontrado");
+        return null;
+    }
     
 }

@@ -12,7 +12,7 @@ public class Main {
         
         //Todo este codigo es principalmente para llenar las colecciones debido a la falta de tiempo que tuvimos.
         //Asesor 1
-        Asesor aPivot = new Asesor("Nicolas Miethe","20.618.997-6","nicolas.miethe@gmail.com","bandasonoraxd",true,"4.7");
+        Asesor aPivot = new Asesor("Nicolas Miethe","20.618.997-6","nicolas.miethe@gmail.com","bandasonoraxd",true,"4.7",1);
         mercado.asesores.add(aPivot);
         
         
@@ -58,7 +58,7 @@ public class Main {
         
         
         //Asesor 2
-        aPivot = new Asesor("Nicolas Brevis","19.043.154-7","nicolas.brevis@gmail.com","greenday54",true,"2.6");
+        aPivot = new Asesor("Nicolas Brevis","19.043.154-7","nicolas.brevis@gmail.com","greenday54",true,"2.6",2);
         mercado.asesores.add(aPivot);
         
         vPivot = new Vendedor("Angel Morales","20.527.112-4",4,89099912,"angel.morales@gmail.com","pescadorKFC");
@@ -92,7 +92,7 @@ public class Main {
         vPivot.propiedades.add(cPivot);
         
         //Asesor 3
-        aPivot = new Asesor("Darien Pacheco","20.058.692-1","darien.pacheco@gmail.com","davidBowie_onePiece",true,"4.5");
+        aPivot = new Asesor("Darien Pacheco","20.058.692-1","darien.pacheco@gmail.com","davidBowie_onePiece",true,"4.5",3);
         mercado.asesores.add(aPivot);
         
         vPivot = new Vendedor("Erik Becerra","20.561.960-k",7,56253790,"erik.becerra@gmail.com","kanyeLamar99");
@@ -125,12 +125,127 @@ public class Main {
         while(opcion!=0){
             opcion2=1;
             System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");
-            System.out.println("1. Menu");
+            System.out.println("1. Agregar");
+            System.out.println("2. Eliminar");
+            System.out.println("3. Modificar");
+            System.out.println("4. Mostrar");
+            System.out.println("5. Parte 4");
+            System.out.println("0. Salir");
             opcion=Integer.parseInt(lector.readLine());
             switch(opcion){
                 case 0:
                     break;
                 case 1:
+                    //Loop de agregar
+                    while(opcion2!=0){
+                        System.out.println("Favor indicar que desea agregar");
+                        System.out.println("1. Vendedor");
+                        System.out.println("2. Propiedad");
+                        System.out.println("3. Asesor");
+                        System.out.println("4. Vendedor a un Asesor");
+                        System.out.println("0. Salir");
+                        opcion2 = Integer.parseInt(lector.readLine());
+                        //-------------------------------------------------------
+                        switch(opcion2){
+                            case 0:
+                                break;
+                            case 1:
+                                mercado.agregarVendedor();
+                                break;
+                            case 2:
+                                System.out.println("Favor decida como encontrar al vendedor.");
+                                System.out.println("1. Rut");
+                                System.out.println("2. Id");
+                                System.out.println("0. Salir");
+                                iPivot=Integer.parseInt(lector.readLine());
+                                switch(iPivot){
+                                    case 1:
+                                        System.out.println("Favor ingrese el Rut");
+                                        mercado.agregarPropiedad(lector.readLine());
+                                        break;
+                                    case 2:
+                                        System.out.println("Favor ingrese el Id");
+                                        mercado.agregarPropiedad(Integer.parseInt(lector.readLine()));
+                                        break;
+                                    case 0:
+                                        break;
+                                    default: 
+                                        System.out.println("Opcion no valida.");
+                                        break;
+                                }
+                            case 3:
+                                mercado.agregarAsesor();
+                                break;
+                            //Para este caso, se debera crear un Vendedor antes de poder ser añadido a una Lista de Asesor.
+                            case 4:
+                                System.out.println("Favor ingrese el id del asesor al cual añadira un vendedor.");
+                                aPivot = mercado.buscarAsesor(Integer.parseInt(lector.readLine()));
+                                //Aca se podra crear un throws error ocupando sobrecarga de metodos para evitar los errores
+                                System.out.println("Favor ingresar el id del vendedor el cual busca añadir");
+                                //Se crea un pivot de vendedor, al cual despues se le añade un link a su Asesor, para luego facilitar la eliminacion.
+                                vPivot = mercado.buscarVendedor(Integer.parseInt(lector.readLine()));
+                                aPivot.vendedores.add(vPivot);
+                                vPivot.setAsesor(aPivot);
+                                break;
+                            default: 
+                                System.out.println("El valor ingresado no se encuentra dentro de los aceptados");
+                                break;
+                        }
+                    }
+                    break;
+                case 2:
+                    while(opcion2!=0){
+                        System.out.println("Favor indicar que desea eliminar");
+                        System.out.println("1. Vendedor");
+                        System.out.println("2. Propiedad");
+                        System.out.println("3. Asesor");
+                        System.out.println("4. Vendedor a un Asesor");
+                        System.out.println("0. Salir");
+                        opcion2 = Integer.parseInt(lector.readLine());
+                        switch(opcion2){
+                            default:
+                                System.out.println("El valor esta fuera de los posibles");
+                                break;
+                            case 0:
+                                break;
+                            case 1:
+                                System.out.println("Favor ingrese el Id del vendedor a eliminar");
+                                //Se ocupa id para encontrar la posicion.
+                                vPivot = mercado.buscarVendedor(Integer.parseInt(lector.readLine()));
+                                //Se crea un pivot de asesor, con la funcion que muestra el asesor del vendedor
+                                aPivot = vPivot.getAsesor();
+                                //Se elimina de ambas listas
+                                mercado.vendedores.remove(mercado.vendedores.indexOf(vPivot));
+                                aPivot.eliminarVendedor(vPivot.getRut());
+                                //Se transforma en null para borrar completamente.
+                                vPivot = null;
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                //El caso es similar a eliminar vendedor, pero a diferencia que en este no tenemos que eliminar los links al mismo
+                                //Ya que al hacerlo null, estos links de vendedores->Asesor, enviarian a un null. Mientras que alreves dejaria la lista con un valor null entremedio.
+                                System.out.println("Favor ingrese el Id del Asesor a eliminar");
+                                aPivot = mercado.buscarAsesor(Integer.parseInt(lector.readLine()));
+                                mercado.asesores.remove(mercado.asesores.indexOf(aPivot));
+                                aPivot = null;  
+                                break;
+                            case 4:
+                                //Este caso simplemente elimina al asesor de la variable de vendedor y al vendedor de la lista de vendedores del asesor
+                                System.out.println("Favor darnos el id del asesor al cual quiere eliminar un vendedor");
+                                aPivot = mercado.buscarAsesor(Integer.parseInt(lector.readLine()));
+                                System.out.println("Favor darnos el rut del vendedor al cual quiere eliminar");
+                                vPivot = aPivot.eliminarVendedor(lector.readLine());
+                                if(vPivot == null){
+                                    break;
+                                }else{
+                                    vPivot.setAsesor(null);
+                                }
+                                break;
+                        }
+                    }
+                    break;
+                case 5:
                     while(opcion2!=0){
                         System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");
                         System.out.println("1. Mostrar ultimo Asesor agregado");

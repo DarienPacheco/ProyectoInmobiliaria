@@ -4,11 +4,18 @@ import java.io.*;
 
 public class Casa extends Propiedad implements Disponibilidad{
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
-        public Casa( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos, boolean disponibilidad){
+        
+        
+        
+        
+    public Casa( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos, boolean disponibilidad){
         super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos, disponibilidad);
         
     }
-
+        public Casa(){
+        super(0,0,0,null,0,0,0,0,false);
+    }
+    
     public void generarPrecio()throws IOException{
         int pEstimado;
         int opcion=1;

@@ -573,6 +573,82 @@ public class Mercado implements Imprimable{
             }
         }
     }
+    //Pasa por la lista mostrando informacion relevante de cada vendedor.
+    public void mostrarVendedores(){
+        Vendedor vPivot;
+        int i=0;
+        System.out.println("VENDEDORES:");
+        while(i < vendedores.size()){
+            vPivot = vendedores.get(i);
+            System.out.println("====================================");
+            System.out.println("Nombre: " + vPivot.getNombre());
+            System.out.println("Rut: " + vPivot.getRut());
+            System.out.println("ID: " + vPivot.getIdCliente());
+            System.out.println("Telefono: " + vPivot.getTelefono());
+            System.out.println("Mail: " + vPivot.getMail());
+            i++;
+        }
+        System.out.println("========================");
+    }
+    
+    public void mostrarPropiedades(){
+        Casa cPivot;
+        Departamento dPivot;
+        //Empezamos iPivot en 1, ya que en ningun momento con el sistema se puede generar la id 0.
+        int i=0,iPivot=1;
+        //i funcionara como un verificador de las veces que se han imprimido propiedades, mientras que iPivot un contador de posicion
+        //Se hara doble verificasion, una para revisar si la key existe y un segundo para confirmar la clase de la cual se trata dicho objeto en caso de que el anterior sea true.
+        System.out.println("PROPIEDADES:");
+        while (i< propiedades.size()){
+            if(propiedades.containsKey(iPivot)){
+                if(propiedades.get(iPivot) instanceof Casa){
+                    cPivot = (Casa) propiedades.get(iPivot);
+                    System.out.println("================================");
+                    System.out.println("==============CASA==============");
+                    System.out.println("================================");
+                    System.out.println("ID: " + cPivot.getIdPropiedad());
+                    System.out.println("Precio: " + cPivot.getPrecio());
+                    System.out.println("Numero de Piezas: " + cPivot.getNumPiezas());
+                    System.out.println("Numero de Baños: " + cPivot.getNumBanos());
+                    System.out.println("Metros Cuadrados: " + cPivot.getArea());
+                    System.out.println("Pisos: " + cPivot.getPisos());
+                    System.out.println("Direccion: " + cPivot.getDireccion());
+                    if(cPivot.isDisponibilidad()){
+                        System.out.println("Disponible para Visita ");
+                    }else{
+                        System.out.println("No Disponible para Visita");
+                    }
+                    System.out.println("================================");
+                    i++;
+                    iPivot++;
+                }else{
+                    dPivot = (Departamento) propiedades.get(iPivot);
+                    System.out.println("================================");
+                    System.out.println("==========DEPARTAMENTO==========");
+                    System.out.println("================================");
+                    System.out.println("ID: " + dPivot.getIdPropiedad());
+                    System.out.println("Precio: " + dPivot.getPrecio());
+                    System.out.println("Numero de Piezas: " + dPivot.getNumPiezas());
+                    System.out.println("Numero de Baños: " + dPivot.getNumBanos());
+                    System.out.println("Metros Cuadrados: " + dPivot.getArea());
+                    System.out.println("Pisos: " + dPivot.getPisos());
+                    System.out.println("Direccion: " + dPivot.getDireccion());
+                    System.out.println("Planta: " + dPivot.getPlanta());
+                    if(dPivot.isDisponibilidad()){
+                        System.out.println("Disponible para Visita ");
+                    }else{
+                        System.out.println("No Disponible para Visita");
+                    }
+                    System.out.println("================================");
+                    i++;
+                    iPivot++;
+                }    
+            }else{
+               iPivot++; 
+            }
+        }
+    }
+    
     public void modificarPropiedad()throws IOException{
         System.out.println("Favor denos el Id de la propiedad la cual quiere modificar.");
         int iPivot=1;

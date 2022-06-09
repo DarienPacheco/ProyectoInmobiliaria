@@ -37,7 +37,7 @@ public class Main {
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
         cPivot = new Casa(20000,3,3,"Concepcion, San Pedro",5,68,2,2, true,vPivot);
-        mercado.propiedades.put(5, dPivot);
+        mercado.propiedades.put(5, cPivot);
         vPivot.propiedades.add(cPivot);
         dPivot = new Departamento(26000,2,2,"Concepcion, Concepcion",7,65,3,1,11, true,vPivot);
         mercado.propiedades.put(7, dPivot);
@@ -290,6 +290,39 @@ public class Main {
                         }
                     }
                     break;
+                case 4:
+                    //Loop mostrar
+                    while(opcion2!=0){
+                        System.out.println("Favor ingrese la opcion que desea ejecutar.");
+                        System.out.println("1. Mostrar Vendedores");
+                        System.out.println("2. Mostrar Propiedades");
+                        System.out.println("3. Mostrar Asesores");
+                        System.out.println("4. Mostrar Propiedades de un Dueño");
+                        System.out.println("5. Mostrar Clientes de un Asesor");
+                        System.out.println("0. Salir");
+                        opcion2 = Integer.parseInt(lector.readLine());
+                        switch(opcion2){
+                            case 0:
+                                break;
+                            default:
+                                System.out.println("El valor otorgado no se encuentra dentro de los aceptados.");
+                                break;
+                            case 1:
+                                mercado.mostrarVendedores();
+                                break;
+                            case 2:
+                                mercado.mostrarPropiedades();
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                            case 5:
+                                break;
+                        }
+                        
+                    }
+                    
                 case 5:
                     while(opcion2!=0){
                         System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");

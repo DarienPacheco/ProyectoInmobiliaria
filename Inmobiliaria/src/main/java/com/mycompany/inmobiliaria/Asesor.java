@@ -126,5 +126,20 @@ public class Asesor implements Imprimable, Disponibilidad{
         System.out.println("Vendedor no encontrado");
         return null;
     }
-    
+    public void mostrarVendedores(){
+        Vendedor vPivot;
+        int i=0;
+        System.out.println("VENDEDORES:");
+        while(i < vendedores.size()){
+            vPivot = vendedores.get(i);
+            System.out.println("====================================");
+            System.out.println("Nombre: " + vPivot.getNombre());
+            System.out.println("Rut: " + vPivot.getRut());
+            System.out.println("ID: " + vPivot.getIdCliente());
+            System.out.println("Telefono: " + vPivot.getTelefono());
+            System.out.println("Mail: " + vPivot.getMail());
+            i++;
+        }
+        System.out.println("====================================");
+    }  
 }

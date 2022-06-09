@@ -314,10 +314,17 @@ public class Main {
                                 mercado.mostrarPropiedades();
                                 break;
                             case 3:
+                                mercado.mostrarAsesores();
                                 break;
                             case 4:
+                                System.out.println("Favor darnos el ID del vendedor al cual quieres ver sus propieades.");
+                                vPivot = mercado.buscarVendedor(Integer.parseInt(lector.readLine()));
+                                vPivot.mostrarPropiedades();
                                 break;
                             case 5:
+                                System.out.println("Favor darnos el ID del asesor el cual ver sus Clientes");
+                                aPivot = mercado.buscarAsesor(Integer.parseInt(lector.readLine()));
+                                aPivot.mostrarVendedores();
                                 break;
                         }
                         

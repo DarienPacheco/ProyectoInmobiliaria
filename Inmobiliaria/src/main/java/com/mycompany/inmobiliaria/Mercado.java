@@ -649,6 +649,28 @@ public class Mercado implements Imprimable{
         }
     }
     
+    public void mostrarAsesores(){
+        Asesor aPivot;
+        int i=0;
+        System.out.println("VENDEDORES:");
+        while(i < asesores.size()){
+            aPivot = asesores.get(i);
+            System.out.println("====================================");
+            System.out.println("Nombre: " + aPivot.getNombre());
+            System.out.println("Rut: " + aPivot.getRut());
+            System.out.println("ID: " + aPivot.getId());
+            System.out.println("Mail: " + aPivot.getMail());
+            System.out.println("Clasificacion: "+ aPivot.getClasificacion());
+            if(aPivot.isDisponibilidad()){
+                System.out.println("Disponible");
+            }else{
+                System.out.println("No disponible");
+            }
+            i++;
+        }
+        System.out.println("========================");
+    }
+    
     public void modificarPropiedad()throws IOException{
         System.out.println("Favor denos el Id de la propiedad la cual quiere modificar.");
         int iPivot=1;

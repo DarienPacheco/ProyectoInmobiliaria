@@ -13,7 +13,9 @@ public abstract class Propiedad implements Disponibilidad{
     private int zona;
     private int pisos;
     private boolean disponibilidad;
-    public Propiedad(int precio, int numBanos, int numPiezas, String direccion, int idPropiedad, int area, int zona, int pisos, boolean disponibilidad){
+    private Vendedor owner;
+
+    public Propiedad(int precio, int numBanos, int numPiezas, String direccion, int idPropiedad, int area, int zona, int pisos, boolean disponibilidad, Vendedor owner){
         
         this.precio = precio;
         this.numBanos = numBanos;
@@ -24,6 +26,7 @@ public abstract class Propiedad implements Disponibilidad{
         this.zona = zona;
         this.pisos = pisos;
         this.disponibilidad = disponibilidad;
+        this.owner = owner;
     }
     public int getPrecio() {
         return precio;
@@ -95,6 +98,13 @@ public abstract class Propiedad implements Disponibilidad{
 
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
+    }
+    
+    public void setOwner(Vendedor owner){
+        this.owner = owner;
+    }
+    public Vendedor getOwner(){
+        return owner;
     }
     
     public abstract void generarPrecio()throws IOException;

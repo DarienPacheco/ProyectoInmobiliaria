@@ -9,12 +9,12 @@ public class Departamento extends Propiedad implements Disponibilidad{
     private int planta;
     BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
     
-    public Departamento( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos,int planta, boolean disponibilidad){
-        super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos, disponibilidad);
+    public Departamento( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos,int planta, boolean disponibilidad,Vendedor owner){
+        super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos, disponibilidad,owner);
         this.planta = planta;
     }
     public Departamento(){
-        super(0,0,0,null,0,0,0,0,false);
+        super(0,0,0,null,0,0,0,0,false,null);
         this.planta=0;
     }
 

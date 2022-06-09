@@ -137,8 +137,10 @@ public class Mercado implements Imprimable{
         System.out.println("1. Casa");
         System.out.println("2. Depto.");
         opcion=Integer.parseInt(lector.readLine());
+        //La unica diferencia entre ambos es que uno es subclase Casa y otro depto.
         switch(opcion){
             case 1:
+                //Se llenan todas las variables respectivas
                 Casa cPivot = new Casa();
                 System.out.println("Favor ingrese el Precio");
                 cPivot.setPrecio(Integer.parseInt(lector.readLine()));
@@ -154,8 +156,11 @@ public class Mercado implements Imprimable{
                 cPivot.setPisos(Integer.parseInt(lector.readLine()));
                 System.out.println("Favor ingrese el numero de la zona en la cual esta ubicada.");
                 cPivot.setZona(Integer.parseInt(lector.readLine()));
+                //Debido al metodo que fue usado para generar id, no es necesaria la verificacion del lugar.
                 cPivot.setIdPropiedad(generarIdPropiedad());
                 cPivot.setDisponibilidad(true);
+                //Se crea un link desde la propiedad a su vendedor para facilitar otros metodos.
+                cPivot.setOwner(vPivot);
                 vPivot.propiedades.add(cPivot);
                 propiedades.put(cPivot.getIdPropiedad(), cPivot);
                 System.out.println("Creacion exitosa");
@@ -180,6 +185,7 @@ public class Mercado implements Imprimable{
                 dPivot.setZona(Integer.parseInt(lector.readLine()));
                 dPivot.setIdPropiedad(generarIdPropiedad());
                 dPivot.setDisponibilidad(true);
+                dPivot.setOwner(vPivot);
                 vPivot.propiedades.add(dPivot);
                 propiedades.put(dPivot.getIdPropiedad(), dPivot);
                 System.out.println("Creacion exitosa");
@@ -224,6 +230,7 @@ public class Mercado implements Imprimable{
                 cPivot.setZona(Integer.parseInt(lector.readLine()));
                 cPivot.setIdPropiedad(generarIdPropiedad());
                 cPivot.setDisponibilidad(true);
+                cPivot.setOwner(vPivot);
                 vPivot.propiedades.add(cPivot);
                 propiedades.put(cPivot.getIdPropiedad(), cPivot);
                 System.out.println("Creacion exitosa");
@@ -248,6 +255,7 @@ public class Mercado implements Imprimable{
                 dPivot.setZona(Integer.parseInt(lector.readLine()));
                 dPivot.setIdPropiedad(generarIdPropiedad());
                 dPivot.setDisponibilidad(true);
+                dPivot.setOwner(vPivot);
                 vPivot.propiedades.add(dPivot);
                 propiedades.put(dPivot.getIdPropiedad(), dPivot);
                 System.out.println("Creacion exitosa");

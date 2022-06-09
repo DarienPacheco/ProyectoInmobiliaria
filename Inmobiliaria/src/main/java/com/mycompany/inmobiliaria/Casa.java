@@ -8,12 +8,12 @@ public class Casa extends Propiedad implements Disponibilidad{
         
         
         
-    public Casa( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos, boolean disponibilidad){
-        super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos, disponibilidad);
+    public Casa( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos, boolean disponibilidad, Vendedor owner){
+        super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos, disponibilidad,owner);
         
     }
         public Casa(){
-        super(0,0,0,null,0,0,0,0,false);
+        super(0,0,0,null,0,0,0,0,false,null);
     }
     
     public void generarPrecio()throws IOException{

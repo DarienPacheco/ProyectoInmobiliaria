@@ -263,6 +263,33 @@ public class Main {
                         }
                     }
                     break;
+                case 3:
+                    //loop modificar
+                    while(opcion2!=0){
+                        System.out.println("Favor indicar que desea modificar");
+                        System.out.println("1. Vendedor");
+                        System.out.println("2. Propiedad");
+                        System.out.println("3. Asesor");
+                        System.out.println("0. Salir");
+                        opcion2 = Integer.parseInt(lector.readLine()); 
+                        switch(opcion2){
+                            case 0:
+                                break;
+                            default :
+                                System.out.println("El valor otorgado no esta dentro de los aceptados.");
+                                break;
+                            case 1:
+                                mercado.modificarVendedor();
+                                break;
+                            case 2:
+                                mercado.modificarPropiedad();
+                                break;
+                            case 3:
+                                mercado.modificarAsesor();
+                                break;
+                        }
+                    }
+                    break;
                 case 5:
                     while(opcion2!=0){
                         System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");

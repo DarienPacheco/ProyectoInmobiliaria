@@ -453,4 +453,254 @@ public class Mercado implements Imprimable{
         System.out.println("Disponibilidad : " + pIdeal.isDisponibilidad());
         System.out.println("-----------------------------------");
     }
+    public void modificarVendedor()throws IOException{
+        //Ocupa rut para buscar y entra a un loop en el cual se pueden modificar las variables que no afectan a otras funcionalidades.
+        int iPivot= 1;
+        String sPivot;
+        System.out.println("Favor ingrese el id del vendedor a modificar");
+        Vendedor vPivot = buscarVendedor(Integer.parseInt(lector.readLine()));
+        
+        while(iPivot!=0){
+            System.out.println("Favor seleccione el valor que quiere modificar");
+            System.out.println("1. Nombre");
+            System.out.println("2. Rut");
+            System.out.println("3. Telefono");
+            System.out.println("4. Mail");
+            System.out.println("5. Contraseña");
+            System.out.println("0. Salir");
+            //Poner aca el mostrar Vendedor.
+            iPivot = Integer.parseInt(lector.readLine());
+            switch(iPivot){
+                default:
+                    System.out.println("el valor entregado no es valido");
+                    break;
+                case 0:
+                    break;
+                case 1:
+                    System.out.println("Favor ingrese el nuevo valor");
+                    vPivot.setNombre(lector.readLine());
+                    break;
+                case 2:
+                    //Rut se puede modificar, ya que apesar de usarse para busquedas no afecta el orden en el cual se guardan, por lo tanto mientras no haya repetidos no hay problemas.
+                    System.out.println("Favor ingrese el nuevo valor");
+                    sPivot= lector.readLine();
+                    if(buscarVendedor(sPivot)!=null){
+                        System.out.println("El rut otorgado ya se encuentra en uso");
+                        break;
+                    }else{
+                        vPivot.setRut(sPivot);
+                        System.out.println("el rut otorgado no se encuentra en uso y se ha modificado correctamente.");
+                        break;
+                    }
+                case 3:
+                    System.out.println("Favor ingrese el nuevo valor");
+                    vPivot.setTelefono(Integer.parseInt(lector.readLine()));
+                    break;
+                case 4:
+                    System.out.println("Favor ingrese el nuevo valor");
+                    vPivot.setMail(lector.readLine());
+                    break;
+                case 5:
+                    System.out.println("Favor ingrese el nuevo valor");
+                    vPivot.setPass(lector.readLine());
+                    break;
+            }
+        }
+    }
+    public void modificarAsesor()throws IOException{
+        //Ocupa rut para buscar y entra a un loop en el cual se pueden modificar las variables que no afectan a otras funcionalidades.
+        int iPivot= 1;
+        String sPivot;
+        System.out.println("Favor ingrese el id del vendedor a modificar");
+        Asesor aPivot = buscarAsesor(Integer.parseInt(lector.readLine()));
+        
+        while(iPivot!=0){
+            System.out.println("Favor seleccione el valor que quiere modificar");
+            System.out.println("1. Nombre");
+            System.out.println("2. Rut");
+            System.out.println("3. Mail");
+            System.out.println("4. Contraseña");
+            System.out.println("5. Disponibilidad");
+            System.out.println("6. Clasificacion");
+            System.out.println("0. Salir");
+            //Poner aca el mostrar Vendedor.
+            iPivot = Integer.parseInt(lector.readLine());
+            switch(iPivot){
+                default:
+                    System.out.println("el valor entregado no es valido");
+                    break;
+                case 0:
+                    break;
+                case 1:
+                    System.out.println("Favor ingrese el nuevo valor");
+                    aPivot.setNombre(lector.readLine());
+                    break;
+                case 2:
+                    //Rut se puede modificar, ya que apesar de usarse para busquedas no afecta el orden en el cual se guardan, por lo tanto mientras no haya repetidos no hay problemas.
+                    System.out.println("Favor ingrese el nuevo valor");
+                    sPivot= lector.readLine();
+                    if(buscarAsesor(sPivot)!=null){
+                        System.out.println("El rut otorgado ya se encuentra en uso");
+                        break;
+                    }else{
+                        aPivot.setRut(sPivot);
+                        System.out.println("el rut otorgado no se encuentra en uso y se ha modificado correctamente.");
+                        break;
+                    }
+                case 3:
+                    System.out.println("Favor ingrese el nuevo valor");
+                    aPivot.setMail(lector.readLine());
+                    break;
+                case 4:
+                    System.out.println("Favor ingrese el nuevo valor");
+                    aPivot.setPass(lector.readLine());
+                    break;
+                case 5:
+                    System.out.println("Favor ingrese el nuevo valor");
+                    System.out.println("1. Disponible/ 2. No disponible");
+                    switch(Integer.parseInt(lector.readLine())){
+                        default: 
+                            System.out.println("Valor otorgado no es aceptable.");
+                            break;
+                        case 1:
+                            aPivot.setDisponibilidad(true);
+                            break;
+                        case 2:
+                            aPivot.setDisponibilidad(false);
+                            break;
+                    }
+                    break;
+            }
+        }
+    }
+    public void modificarPropiedad()throws IOException{
+        System.out.println("Favor denos el Id de la propiedad la cual quiere modificar.");
+        int iPivot=1;
+        String sPivot = lector.readLine();
+        //Se verifica cual subclase de propiedad es requerida
+        if(propiedades.get(Integer.parseInt(sPivot)) instanceof Casa){
+            //La zona no es una variable que consideramos cambiable, porque eso indicaria otra propiedad, en cambio la direccion puede cambiar el nombre de la calle.
+            Casa cPivot = (Casa) propiedades.get(Integer.parseInt(sPivot));
+            while(iPivot!= 0){
+                System.out.println("Favor seleccione la variable a modificar.");
+                System.out.println("1. Precio");
+                System.out.println("2. Numero de Baños");
+                System.out.println("3. Numero de Piezas");
+                System.out.println("4. Direccion");
+                System.out.println("5. Metros cuadrados");
+                System.out.println("6. Pisos");
+                System.out.println("7. Disponibilidad");
+                System.out.println("0. Salir");
+                iPivot = Integer.parseInt(lector.readLine());
+                switch(iPivot){
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("el valor entregado no es valido.");
+                        break;
+                    case 1:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        cPivot.setPrecio(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 2:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        cPivot.setNumBanos(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 3:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        cPivot.setNumPiezas(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 4:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        cPivot.setDireccion(lector.readLine());
+                        break;
+                    case 5:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        cPivot.setArea(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 6:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        cPivot.setPisos(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 7:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        System.out.println("1. Disponible/ 2. No disponible");
+                        switch(Integer.parseInt(lector.readLine())){
+                            default: 
+                                System.out.println("Valor otorgado no es aceptable.");
+                                break;
+                            case 1:
+                                cPivot.setDisponibilidad(true);
+                                break;
+                            case 2:
+                                cPivot.setDisponibilidad(false);
+                                break;
+                        }
+                }
+                
+            }
+        }else{
+            //Las mismos atributos que no se pueden cambiar en Casa no se pueden cambiar aca, y la variable unica de departamento planta tambien es considerada incambiable
+            //Dado que eso seria otra propiedad.
+            Departamento dPivot = (Departamento) propiedades.get(Integer.parseInt(sPivot));
+            while(iPivot!= 0){
+                System.out.println("Favor seleccione la variable a modificar.");
+                System.out.println("1. Precio");
+                System.out.println("2. Numero de Baños");
+                System.out.println("3. Numero de Piezas");
+                System.out.println("4. Direccion");
+                System.out.println("5. Metros cuadrados");
+                System.out.println("6. Pisos");
+                System.out.println("7. Disponibilidad");
+                System.out.println("0. Salir");
+                iPivot = Integer.parseInt(lector.readLine());
+                switch(iPivot){
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("el valor entregado no es valido.");
+                        break;
+                    case 1:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        dPivot.setPrecio(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 2:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        dPivot.setNumBanos(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 3:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        dPivot.setNumPiezas(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 4:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        dPivot.setDireccion(lector.readLine());
+                        break;
+                    case 5:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        dPivot.setArea(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 6:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        dPivot.setPisos(Integer.parseInt(lector.readLine()));
+                        break;
+                    case 7:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        System.out.println("1. Disponible/ 2. No disponible");
+                        switch(Integer.parseInt(lector.readLine())){
+                            default: 
+                                System.out.println("Valor otorgado no es aceptable.");
+                                break;
+                            case 1:
+                                dPivot.setDisponibilidad(true);
+                                break;
+                            case 2:
+                                dPivot.setDisponibilidad(false);
+                                break;
+                        }
+                }
+                
+            }
+        }
+    }
 }

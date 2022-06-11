@@ -10,14 +10,14 @@ public abstract class Cliente{
     private String pass;
     private Asesor asesor;
 
-    public Cliente(String nombre, String rut, int idCliente, int telefono, String mail, String pass) {
+    public Cliente(String nombre, String rut, int idCliente, int telefono, String mail, String pass, Asesor asesor) {
         this.nombre = nombre;
         this.rut = rut;
         this.idCliente = idCliente;
         this.telefono = telefono;
         this.mail = mail;
         this.pass = pass;
-        this.asesor = new Asesor();
+        this.asesor = asesor;
     }
 
 

@@ -17,7 +17,7 @@ public class Main {
         
         
                 
-        Vendedor vPivot = new Vendedor("Pablo Ortiz","21.312.475-3",1,61365315,"pablo.ortiz@gmail.com","minixd");
+        Vendedor vPivot = new Vendedor("Pablo Ortiz","21.312.475-3",1,61365315,"pablo.ortiz@gmail.com","minixd",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
         Casa cPivot = new Casa(20300,2,1,"Santiago, Lampa",1,75,1,2, true,vPivot);
@@ -33,7 +33,7 @@ public class Main {
         vPivot.propiedades.add(dPivot);
         mercado.propiedades.put(4, dPivot);
         
-        vPivot = new Vendedor("Jefte Ponce","20.048.542-k",2,64967789,"jefte.ponce@gmail.com","avatar12");
+        vPivot = new Vendedor("Jefte Ponce","20.048.542-k",2,64967789,"jefte.ponce@gmail.com","avatar12",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
         cPivot = new Casa(20000,3,3,"Concepcion, San Pedro",5,68,2,2, true,vPivot);
@@ -43,7 +43,7 @@ public class Main {
         mercado.propiedades.put(7, dPivot);
         vPivot.propiedades.add(dPivot);
         
-        vPivot = new Vendedor("Ivan Galaz","20.611.742-2",3,68446923,"ivan.galaz@gmail.com","mariguanas69");
+        vPivot = new Vendedor("Ivan Galaz","20.611.742-2",3,68446923,"ivan.galaz@gmail.com","mariguanas69",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
         dPivot = new Departamento(30000,2,3,"Valparaiso, Concon",11,66,2,1,2, true,vPivot);
@@ -61,16 +61,16 @@ public class Main {
         aPivot = new Asesor("Nicolas Brevis","19.043.154-7","nicolas.brevis@gmail.com","greenday54",true,"2.6",2);
         mercado.asesores.add(aPivot);
         
-        vPivot = new Vendedor("Angel Morales","20.527.112-4",4,89099912,"angel.morales@gmail.com","pescadorKFC");
+        vPivot = new Vendedor("Angel Morales","20.527.112-4",4,89099912,"angel.morales@gmail.com","pescadorKFC",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
         cPivot = new Casa(14000,1,2,"Valparaiso, San Antonio",6,50,1,1, true,vPivot);
         mercado.propiedades.put(6, cPivot);
         vPivot.propiedades.add(cPivot);
         
-        vPivot = new Vendedor ("Sebastian Valdebenito","21.992.210-k",5,44516166,"sebastia.valdebenito@gmail.com","steinsREM");
-        mercado.vendedores.add(vPivot);
+        vPivot = new Vendedor ("Sebastian Valdebenito","21.992.210-k",5,44516166,"sebastia.valdebenito@gmail.com","steinsREM",aPivot);
         aPivot.vendedores.add(vPivot);
+        mercado.vendedores.add(vPivot);
         dPivot = new Departamento(40000,2,2,"Santiago, Providencia",10,55,3,1,8, true,vPivot);
         mercado.propiedades.put(10, dPivot);
         vPivot.propiedades.add(dPivot);
@@ -81,7 +81,7 @@ public class Main {
         mercado.propiedades.put(15, cPivot);
         vPivot.propiedades.add(cPivot);
         
-        vPivot = new Vendedor ("Ignacio Morales","20.044.625-2",6,77989874,"ignacio.morales@gmail.com","metalLML666");
+        vPivot = new Vendedor ("Ignacio Morales","20.044.625-2",6,77989874,"ignacio.morales@gmail.com","metalLML666",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
         dPivot = new Departamento (20000,1,2,"Concepcion, Hualpen",20,54,2,1,3, true,vPivot);
@@ -95,7 +95,7 @@ public class Main {
         aPivot = new Asesor("Darien Pacheco","20.058.692-1","darien.pacheco@gmail.com","davidBowie_onePiece",true,"4.5",3);
         mercado.asesores.add(aPivot);
         
-        vPivot = new Vendedor("Erik Becerra","20.561.960-k",7,56253790,"erik.becerra@gmail.com","kanyeLamar99");
+        vPivot = new Vendedor("Erik Becerra","20.561.960-k",7,56253790,"erik.becerra@gmail.com","kanyeLamar99",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
         dPivot = new Departamento(90000,3,5,"Santiago, La Reina",9,130,3,2,15, true, vPivot);
@@ -108,7 +108,7 @@ public class Main {
         mercado.propiedades.put(16, dPivot);
         vPivot.propiedades.add(dPivot);
         
-        vPivot = new Vendedor("Francisco Leiva","18.721.140-4",8,53126662,"francisco.leiva@gmail.com","comunismoMorrissey");
+        vPivot = new Vendedor("Francisco Leiva","18.721.140-4",8,53126662,"francisco.leiva@gmail.com","comunismoMorrissey",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
         cPivot = new Casa(9000,1,1,"Santiago, Cerro Navia",14,42,1,1, true,vPivot);
@@ -122,6 +122,7 @@ public class Main {
         int opcion2=1;
         int iPivot;
         Propiedad pPivot;
+        Asesor aPivot2;
         while(opcion!=0){
             opcion2=1;
             System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");
@@ -173,6 +174,7 @@ public class Main {
                                         System.out.println("Opcion no valida.");
                                         break;
                                 }
+                                break;
                             case 3:
                                 mercado.agregarAsesor();
                                 break;
@@ -185,6 +187,11 @@ public class Main {
                                 //Se crea un pivot de vendedor, al cual despues se le añade un link a su Asesor, para luego facilitar la eliminacion.
                                 vPivot = mercado.buscarVendedor(Integer.parseInt(lector.readLine()));
                                 aPivot.vendedores.add(vPivot);
+                                //Se crea un aPivot2 para eliminar al vendedor de la lista del asesor original que tenia, en el caso de que no sea null
+                                if(vPivot.getAsesor()!= null){
+                                    aPivot2 = vPivot.getAsesor();
+                                    aPivot2.vendedores.remove(vPivot);
+                                }
                                 vPivot.setAsesor(aPivot);
                                 break;
                             default: 
@@ -216,8 +223,8 @@ public class Main {
                                 //Se crea un pivot de asesor, con la funcion que muestra el asesor del vendedor
                                 aPivot = vPivot.getAsesor();
                                 //Se elimina de ambas listas
+                                aPivot.eliminarVendedor(vPivot.getIdCliente());
                                 mercado.vendedores.remove(mercado.vendedores.indexOf(vPivot));
-                                aPivot.eliminarVendedor(vPivot.getRut());
                                 //Se transforma en null para borrar completamente.
                                 vPivot = null;
                                 break;

@@ -22,7 +22,7 @@ public class Mercado implements Imprimable{
         Vendedor vPivot = null;
         int i=0;
         //Se ocupa un ciclo para pasar por la lista buscando el rut
-        while(i <= vendedores.size()){
+        while(i < vendedores.size()){
             vPivot = vendedores.get(i);
             //En caso de encontrarlo se retorna
             if(vPivot.getRut().equals(rut)){
@@ -109,7 +109,7 @@ public class Mercado implements Imprimable{
         Asesor aPivot = null;
         int i=0;
         //Se ocupa un ciclo para pasar por la lista buscando el rut
-        while(i <= asesores.size()){
+        while(i < asesores.size()){
             aPivot = asesores.get(i);
             //En caso de encontrarlo se retorna
             if(aPivot.getRut().equals(rut)){
@@ -355,7 +355,7 @@ public class Mercado implements Imprimable{
         //Si se han eliminado multiples vendedores y existe el id 7 simplemente, se comparara la posicion+1, si no es igual al valor del id que se esta ocupando
         //otorga la posicion +1 como el id, la cual despues se ocupa para insertar en el agregar.
        Vendedor vPivot = null;
-       while(i <= vendedores.size()-1){
+       while(i < vendedores.size()){
            vPivot = vendedores.get(i);
            if( i+1 != vPivot.getIdCliente()){
                return i+1;
@@ -372,7 +372,7 @@ public class Mercado implements Imprimable{
         }  
         int i = 0;
        Asesor aPivot = null;
-       while(i <= asesores.size()){
+       while(i < asesores.size()){
            aPivot = asesores.get(i);
            if( i+1 != aPivot.getId()){
                return i+1;

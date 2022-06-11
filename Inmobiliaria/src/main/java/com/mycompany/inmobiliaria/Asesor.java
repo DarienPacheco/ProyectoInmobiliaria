@@ -111,7 +111,7 @@ public class Asesor implements Imprimable, Disponibilidad{
         Vendedor vPivot = null;
         int i=0;
         //Ocupa un ciclo para encontrar el rut del vendedor, una vez encontrado, lo eliminado ocupando su posicion.
-        while(i <= vendedores.size()){
+        while(i < vendedores.size()){
             vPivot = vendedores.get(i);
             if(vPivot.getRut().equals(rut)){
                 System.out.println("Rut encontrado.");
@@ -126,6 +126,28 @@ public class Asesor implements Imprimable, Disponibilidad{
         System.out.println("Vendedor no encontrado");
         return null;
     }
+    
+    public Vendedor eliminarVendedor(int id){
+        Vendedor vPivot = null;
+        int i=0;
+        System.out.println("Tamaño vendedores:" + getNombre());
+        while(i<vendedores.size()){
+            vPivot = vendedores.get(i);
+            System.out.println(id);
+            System.out.println(vPivot.getIdCliente());
+            if(vPivot.getIdCliente() == id){
+                System.out.println("Rut encontrado");
+                vendedores.remove(i);
+                System.out.println("Vendedor Eliminado de Asesor");
+                return vPivot;
+            }else{
+                i++;
+            }
+        }
+        System.out.println("Vendedor no encontrado");
+        return null;
+    }
+    
     public void mostrarVendedores(){
         Vendedor vPivot;
         int i=0;

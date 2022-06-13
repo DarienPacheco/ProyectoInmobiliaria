@@ -117,7 +117,7 @@ public class Asesor implements Imprimable, Disponibilidad{
                 System.out.println("Rut encontrado.");
                 vendedores.remove(i);
                 //avisa una vez encontrado
-                System.out.println("Vendedor Eliminado de Asesor");
+                System.out.println("Vendedor Eliminado correctamente");
                 return vPivot;
             }else{
                 i++; 

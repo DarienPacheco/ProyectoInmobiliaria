@@ -340,11 +340,8 @@ public class Main {
                 case 5:
                     while(opcion2!=0){
                         System.out.println("Favor ingrese la opcion que desea ejecutar.");
-                        System.out.println("1. Mostrar Vendedores");
-                        System.out.println("2. Mostrar Propiedades");
-                        System.out.println("3. Mostrar Asesores");
-                        System.out.println("4. Mostrar Propiedades de un Dueño");
-                        System.out.println("5. Mostrar Clientes de un Asesor");
+                        System.out.println("1. Escribir Asesores con sus Clientes.");
+                        System.out.println("2. Escribir Propiedades con sus Dueños");
                         System.out.println("0. Salir");
                         
                         opcion2 = Integer.parseInt(lector.readLine());
@@ -355,9 +352,11 @@ public class Main {
                                 System.out.println("El valor otorgado no se encuentra dentro de los aceptados.");
                                 break;
                             case 1:
-                                mercado.archivoReporte();
+                                mercado.archivoCliente();
                                 break;
-                        
+                            case 2:
+                                mercado.archivoPropiedades();
+                                break;
                         }
                     }
                 case 6:

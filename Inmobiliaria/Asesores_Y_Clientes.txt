@@ -1,0 +1,91 @@
+Nombre Asesor: Nicolas Miethe
+Rut: 20.618.997-6
+Correo: nicolas.miethe@gmail.com
+Contraseña: bandasonoraxd
+Disponibilidad: true
+Clasificacion: 4.7
+
+===============================
+Clientes:
+Nombre : Pablo Ortiz
+Rut: 21.312.475-3
+ID: 1
+Telefono: 61365315
+Correo: pablo.ortiz@gmail.com
+Contraseña: minixd
+
+*******************************
+Nombre : Jefte Ponce
+Rut: 20.048.542-k
+ID: 2
+Telefono: 64967789
+Correo: jefte.ponce@gmail.com
+Contraseña: avatar12
+
+*******************************
+Nombre : Ivan Galaz
+Rut: 20.611.742-2
+ID: 3
+Telefono: 68446923
+Correo: ivan.galaz@gmail.com
+Contraseña: mariguanas69
+
+*******************************
+Nombre Asesor: Nicolas Brevis
+Rut: 19.043.154-7
+Correo: nicolas.brevis@gmail.com
+Contraseña: greenday54
+Disponibilidad: true
+Clasificacion: 2.6
+
+===============================
+Clientes:
+Nombre : Angel Morales
+Rut: 20.527.112-4
+ID: 4
+Telefono: 89099912
+Correo: angel.morales@gmail.com
+Contraseña: pescadorKFC
+
+*******************************
+Nombre : Sebastian Valdebenito
+Rut: 21.992.210-k
+ID: 5
+Telefono: 44516166
+Correo: sebastia.valdebenito@gmail.com
+Contraseña: steinsREM
+
+*******************************
+Nombre : Ignacio Morales
+Rut: 20.044.625-2
+ID: 6
+Telefono: 77989874
+Correo: ignacio.morales@gmail.com
+Contraseña: metalLML666
+
+*******************************
+Nombre Asesor: Darien Pacheco
+Rut: 20.058.692-1
+Correo: darien.pacheco@gmail.com
+Contraseña: davidBowie_onePiece
+Disponibilidad: true
+Clasificacion: 4.5
+
+===============================
+Clientes:
+Nombre : Erik Becerra
+Rut: 20.561.960-k
+ID: 7
+Telefono: 56253790
+Correo: erik.becerra@gmail.com
+Contraseña: kanyeLamar99
+
+*******************************
+Nombre : Francisco Leiva
+Rut: 18.721.140-4
+ID: 8
+Telefono: 53126662
+Correo: francisco.leiva@gmail.com
+Contraseña: comunismoMorrissey
+
+*******************************

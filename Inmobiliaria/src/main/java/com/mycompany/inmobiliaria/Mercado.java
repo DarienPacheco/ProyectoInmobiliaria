@@ -802,20 +802,15 @@ public class Mercado implements Imprimable{
         }
     }
     
-    
-    
-    
-    
-    
-    
-    public void archivoReporte() throws IOException{
+
+    public void archivoCliente() throws IOException{
 
         FileWriter fichero = null;
         PrintWriter pw = null;
         Asesor aPivot;
         Cliente cPivot;
         Propiedad pPivot;
-        fichero = new FileWriter("prueba.txt");
+        fichero = new FileWriter("Asesores_Y_Clientes.txt");
         pw = new PrintWriter(fichero);
         // AQUI SE ESCRIBEN LOS CLIENTES DE UN ASESOR JUNTO CON EL ASESOR CORRESPONDIENTE
         if(!asesores.isEmpty()){
@@ -844,6 +839,17 @@ public class Mercado implements Imprimable{
                 }
             }
         }
+        fichero.close();
+    }
+    
+    public void archivoPropiedades() throws IOException{
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        Asesor aPivot;
+        Cliente cPivot;
+        Propiedad pPivot;
+        fichero = new FileWriter("Propiedades_Y_Dueño.txt");
+        pw = new PrintWriter(fichero);
         Vendedor vPivot;
         if(!vendedores.isEmpty()){
             for(int i=0; i < vendedores.size(); i++){

@@ -1,17 +1,383 @@
-Nombre Asesor: XDDDDDDDDDD
-Rut: 123
-Correo: ashjkdgasd
-Contrase�a: ashjkgasd
-Disponibilidad: sdajkgd
-Clasificacion: asdhjkasd
+Nombre Asesor: Nicolas Miethe
+Rut: 20.618.997-6
+Correo: nicolas.miethe@gmail.com
+Contraseña: bandasonoraxd
+Disponibilidad: true
+Clasificacion: 4.7
 
 ===============================
 Clientes:
-Nombre : darien
-Rut: 321
+Nombre : Pablo Ortiz
+Rut: 21.312.475-3
 ID: 1
-Telefono: 2349
-Correo: asjkdasd
-Contrase�a: sldkfhsdjkf
+Telefono: 61365315
+Correo: pablo.ortiz@gmail.com
+Contraseña: minixd
+
+*******************************
+Nombre : Jefte Ponce
+Rut: 20.048.542-k
+ID: 2
+Telefono: 64967789
+Correo: jefte.ponce@gmail.com
+Contraseña: avatar12
+
+*******************************
+Nombre : Ivan Galaz
+Rut: 20.611.742-2
+ID: 3
+Telefono: 68446923
+Correo: ivan.galaz@gmail.com
+Contraseña: mariguanas69
+
+*******************************
+Nombre Asesor: Nicolas Brevis
+Rut: 19.043.154-7
+Correo: nicolas.brevis@gmail.com
+Contraseña: greenday54
+Disponibilidad: true
+Clasificacion: 2.6
+
+===============================
+Clientes:
+Nombre : Angel Morales
+Rut: 20.527.112-4
+ID: 4
+Telefono: 89099912
+Correo: angel.morales@gmail.com
+Contraseña: pescadorKFC
+
+*******************************
+Nombre : Sebastian Valdebenito
+Rut: 21.992.210-k
+ID: 5
+Telefono: 44516166
+Correo: sebastia.valdebenito@gmail.com
+Contraseña: steinsREM
+
+*******************************
+Nombre : Ignacio Morales
+Rut: 20.044.625-2
+ID: 6
+Telefono: 77989874
+Correo: ignacio.morales@gmail.com
+Contraseña: metalLML666
+
+*******************************
+Nombre Asesor: Darien Pacheco
+Rut: 20.058.692-1
+Correo: darien.pacheco@gmail.com
+Contraseña: davidBowie_onePiece
+Disponibilidad: true
+Clasificacion: 4.5
+
+===============================
+Clientes:
+Nombre : Erik Becerra
+Rut: 20.561.960-k
+ID: 7
+Telefono: 56253790
+Correo: erik.becerra@gmail.com
+Contraseña: kanyeLamar99
+
+*******************************
+Nombre : Francisco Leiva
+Rut: 18.721.140-4
+ID: 8
+Telefono: 53126662
+Correo: francisco.leiva@gmail.com
+Contraseña: comunismoMorrissey
+
+*******************************
+Nombre : Pablo Ortiz
+Rut: 21.312.475-3
+ID: 1
+Telefono: 61365315
+Correo: pablo.ortiz@gmail.com
+Contraseña: minixd
+
+===============================
+Propiedad(es) de Pablo Ortiz
+Precio: 20300
+Numero de piezas: 1
+Numero de baños: 2
+Direccion: Santiago, Lampa
+ID: 1
+Piso: 2
+Area: 75
+Zona: 1
+Disponibilidad: true
+
+*******************************
+Precio: 50000
+Numero de piezas: 4
+Numero de baños: 3
+Direccion: Santiago, Ñuñoa
+ID: 2
+Piso: 3
+Area: 100
+Zona: 3
+Disponibilidad: true
+
+*******************************
+Precio: 21000
+Numero de piezas: 1
+Numero de baños: 1
+Direccion: Valparaiso, San Felipe
+ID: 3
+Piso: 1
+Area: 68
+Zona: 2
+Disponibilidad: true
+
+*******************************
+Precio: 28000
+Numero de piezas: 2
+Numero de baños: 2
+Direccion: Valparaiso, Reñaca
+ID: 4
+Piso: 1
+Area: 60
+Zona: 3
+Disponibilidad: true
+
+*******************************
+Nombre : Jefte Ponce
+Rut: 20.048.542-k
+ID: 2
+Telefono: 64967789
+Correo: jefte.ponce@gmail.com
+Contraseña: avatar12
+
+===============================
+Propiedad(es) de Jefte Ponce
+Precio: 20000
+Numero de piezas: 3
+Numero de baños: 3
+Direccion: Concepcion, San Pedro
+ID: 5
+Piso: 2
+Area: 68
+Zona: 2
+Disponibilidad: true
+
+*******************************
+Precio: 26000
+Numero de piezas: 2
+Numero de baños: 2
+Direccion: Concepcion, Concepcion
+ID: 7
+Piso: 1
+Area: 65
+Zona: 3
+Disponibilidad: true
+
+*******************************
+Nombre : Ivan Galaz
+Rut: 20.611.742-2
+ID: 3
+Telefono: 68446923
+Correo: ivan.galaz@gmail.com
+Contraseña: mariguanas69
+
+===============================
+Propiedad(es) de Ivan Galaz
+Precio: 30000
+Numero de piezas: 3
+Numero de baños: 2
+Direccion: Valparaiso, Concon
+ID: 11
+Piso: 1
+Area: 66
+Zona: 2
+Disponibilidad: true
+
+*******************************
+Precio: 19000
+Numero de piezas: 2
+Numero de baños: 2
+Direccion: Valparaiso, Valparaiso
+ID: 17
+Piso: 1
+Area: 65
+Zona: 1
+Disponibilidad: true
+
+*******************************
+Precio: 59000
+Numero de piezas: 4
+Numero de baños: 2
+Direccion: Valparaiso, Viña del Mar
+ID: 19
+Piso: 2
+Area: 122
+Zona: 3
+Disponibilidad: true
+
+*******************************
+Nombre : Angel Morales
+Rut: 20.527.112-4
+ID: 4
+Telefono: 89099912
+Correo: angel.morales@gmail.com
+Contraseña: pescadorKFC
+
+===============================
+Propiedad(es) de Angel Morales
+Precio: 14000
+Numero de piezas: 2
+Numero de baños: 1
+Direccion: Valparaiso, San Antonio
+ID: 6
+Piso: 1
+Area: 50
+Zona: 1
+Disponibilidad: true
+
+*******************************
+Nombre : Sebastian Valdebenito
+Rut: 21.992.210-k
+ID: 5
+Telefono: 44516166
+Correo: sebastia.valdebenito@gmail.com
+Contraseña: steinsREM
+
+===============================
+Propiedad(es) de Sebastian Valdebenito
+Precio: 40000
+Numero de piezas: 2
+Numero de baños: 2
+Direccion: Santiago, Providencia
+ID: 10
+Piso: 1
+Area: 55
+Zona: 3
+Disponibilidad: true
+
+*******************************
+Precio: 38000
+Numero de piezas: 4
+Numero de baños: 3
+Direccion: Santiago, La Florida
+ID: 18
+Piso: 1
+Area: 84
+Zona: 2
+Disponibilidad: true
+
+*******************************
+Precio: 34000
+Numero de piezas: 3
+Numero de baños: 2
+Direccion: Los Rios, Valdivia
+ID: 15
+Piso: 2
+Area: 80
+Zona: 2
+Disponibilidad: true
+
+*******************************
+Nombre : Ignacio Morales
+Rut: 20.044.625-2
+ID: 6
+Telefono: 77989874
+Correo: ignacio.morales@gmail.com
+Contraseña: metalLML666
+
+===============================
+Propiedad(es) de Ignacio Morales
+Precio: 20000
+Numero de piezas: 2
+Numero de baños: 1
+Direccion: Concepcion, Hualpen
+ID: 20
+Piso: 1
+Area: 54
+Zona: 2
+Disponibilidad: true
+
+*******************************
+Precio: 21000
+Numero de piezas: 2
+Numero de baños: 1
+Direccion: Coquimbo, La Serena
+ID: 13
+Piso: 1
+Area: 70
+Zona: 1
+Disponibilidad: true
+
+*******************************
+Nombre : Erik Becerra
+Rut: 20.561.960-k
+ID: 7
+Telefono: 56253790
+Correo: erik.becerra@gmail.com
+Contraseña: kanyeLamar99
+
+===============================
+Propiedad(es) de Erik Becerra
+Precio: 90000
+Numero de piezas: 5
+Numero de baños: 3
+Direccion: Santiago, La Reina
+ID: 9
+Piso: 2
+Area: 130
+Zona: 3
+Disponibilidad: true
+
+*******************************
+Precio: 83000
+Numero de piezas: 6
+Numero de baños: 3
+Direccion: Santiago, Chicureo
+ID: 12
+Piso: 3
+Area: 180
+Zona: 3
+Disponibilidad: true
+
+*******************************
+Precio: 57000
+Numero de piezas: 3
+Numero de baños: 3
+Direccion: Araucania, Pucon
+ID: 16
+Piso: 1
+Area: 100
+Zona: 3
+Disponibilidad: true
+
+*******************************
+Nombre : Francisco Leiva
+Rut: 18.721.140-4
+ID: 8
+Telefono: 53126662
+Correo: francisco.leiva@gmail.com
+Contraseña: comunismoMorrissey
+
+===============================
+Propiedad(es) de Francisco Leiva
+Precio: 9000
+Numero de piezas: 1
+Numero de baños: 1
+Direccion: Santiago, Cerro Navia
+ID: 14
+Piso: 1
+Area: 42
+Zona: 1
+Disponibilidad: true
+
+*******************************
+Precio: 11000
+Numero de piezas: 1
+Numero de baños: 1
+Direccion: Rancagua, Mostazal
+ID: 8
+Piso: 1
+Area: 45
+Zona: 1
+Disponibilidad: true
 
 *******************************

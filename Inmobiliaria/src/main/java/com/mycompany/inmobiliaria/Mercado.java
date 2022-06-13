@@ -801,4 +801,79 @@ public class Mercado implements Imprimable{
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    public void archivoReporte() throws IOException{
+
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        Asesor aPivot;
+        Cliente cPivot;
+        Propiedad pPivot;
+        fichero = new FileWriter("prueba.txt");
+        pw = new PrintWriter(fichero);
+        // AQUI SE ESCRIBEN LOS CLIENTES DE UN ASESOR JUNTO CON EL ASESOR CORRESPONDIENTE
+        if(!asesores.isEmpty()){
+            for(int i=0; i < asesores.size(); i++){
+                aPivot = asesores.get(i);
+                pw.write("Nombre Asesor: " + aPivot.getNombre() + "\n");
+                pw.write("Rut: " + aPivot.getRut() + "\n");
+                pw.write("Correo: " + aPivot.getMail() + "\n");
+                pw.write("Contraseña: " + aPivot.getPass() + "\n");
+                pw.write("Disponibilidad: " + aPivot.isDisponibilidad() + "\n");
+                pw.write("Clasificacion: " + aPivot.getClasificacion() + "\n");
+                pw.write("\n===============================\n");
+
+                if(!aPivot.vendedores.isEmpty()){
+                    pw.write("Clientes:\n");
+                    for(int j=0; j < aPivot.vendedores.size(); j++){
+                        cPivot = aPivot.vendedores.get(j);
+                        pw.write("Nombre : " + cPivot.getNombre() + "\n");
+                        pw.write("Rut: " + cPivot.getRut() + "\n");
+                        pw.write("ID: " + cPivot.getIdCliente() + "\n");
+                        pw.write("Telefono: " + cPivot.getTelefono() + "\n");
+                        pw.write("Correo: " + cPivot.getMail() + "\n");
+                        pw.write("Contraseña: " + cPivot.getPass() + "\n");
+                        pw.write("\n*******************************\n");
+                    }
+                }
+            }
+        }
+        Vendedor vPivot;
+        if(!vendedores.isEmpty()){
+            for(int i=0; i < vendedores.size(); i++){
+                vPivot = vendedores.get(i);
+                pw.write("Nombre : " + vPivot.getNombre() + "\n");
+                pw.write("Rut: " + vPivot.getRut() + "\n");
+                pw.write("ID: " + vPivot.getIdCliente() + "\n");
+                pw.write("Telefono: " + vPivot.getTelefono() + "\n");
+                pw.write("Correo: " + vPivot.getMail() + "\n");
+                pw.write("Contraseña: " + vPivot.getPass() + "\n");
+                pw.write("\n===============================\n");
+                if(!vPivot.propiedades.isEmpty()){
+                    pw.write("Propiedad(es) de " + vPivot.getNombre() + "\n");
+                    for(int j=0; j < vPivot.propiedades.size(); j++){
+                        pPivot = vPivot.propiedades.get(j);
+                        pw.write("Precio: " + pPivot.getPrecio() + "\n");
+                        pw.write("Numero de piezas: " + pPivot.getNumPiezas() + "\n");
+                        pw.write("Numero de baños: " + pPivot.getNumBanos() + "\n");
+                        pw.write("Direccion: " + pPivot.getDireccion() + "\n");
+                        pw.write("ID: " + pPivot.getIdPropiedad() + "\n");
+                        pw.write("Piso: " + pPivot.getPisos() + "\n");
+                        pw.write("Area: " + pPivot.getArea() + "\n");
+                        pw.write("Zona: " + pPivot.getZona() + "\n");
+                        pw.write("Disponibilidad: " + pPivot.isDisponibilidad() + "\n");
+                        pw.write("\n*******************************\n");
+                    }
+
+                }
+            }
+        }
+        fichero.close();
+    }
 }

@@ -130,7 +130,8 @@ public class Main {
             System.out.println("2. Eliminar");
             System.out.println("3. Modificar");
             System.out.println("4. Mostrar");
-            System.out.println("5. Parte 4");
+            System.out.println("5. Escribir txt");
+            System.out.println("6. Parte 4");
             System.out.println("0. Salir");
             opcion=Integer.parseInt(lector.readLine());
             switch(opcion){
@@ -336,8 +337,30 @@ public class Main {
                         }
                         
                     }
-                    
                 case 5:
+                    while(opcion2!=0){
+                        System.out.println("Favor ingrese la opcion que desea ejecutar.");
+                        System.out.println("1. Mostrar Vendedores");
+                        System.out.println("2. Mostrar Propiedades");
+                        System.out.println("3. Mostrar Asesores");
+                        System.out.println("4. Mostrar Propiedades de un Dueño");
+                        System.out.println("5. Mostrar Clientes de un Asesor");
+                        System.out.println("0. Salir");
+                        
+                        opcion2 = Integer.parseInt(lector.readLine());
+                        switch(opcion2){
+                            case 0:
+                                break;
+                            default:
+                                System.out.println("El valor otorgado no se encuentra dentro de los aceptados.");
+                                break;
+                            case 1:
+                                mercado.archivoReporte();
+                                break;
+                        
+                        }
+                    }
+                case 6:
                     while(opcion2!=0){
                         System.out.println("Bienvenido, favor indiquenos la accion que quiere tomar:");
                         System.out.println("1. Mostrar ultimo Asesor agregado");

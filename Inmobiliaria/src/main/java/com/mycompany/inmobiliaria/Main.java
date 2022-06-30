@@ -20,13 +20,13 @@ public class Main {
         Vendedor vPivot = new Vendedor("Pablo Ortiz","21.312.475-3",1,61365315,"pablo.ortiz@gmail.com","minixd",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
-        Casa cPivot = new Casa(20300,2,1,"Santiago, Lampa",1,75,1,2, true,vPivot);
+        Casa cPivot = new Casa(20300,2,1,"Santiago, Lampa",1,75,1,2, true,vPivot,30);
         mercado.propiedades.put(1, cPivot);
         vPivot.propiedades.add(cPivot);
-        cPivot = new Casa(50000,3,4,"Santiago, Ñuñoa",2,100,3,3, true,vPivot);
+        cPivot = new Casa(50000,3,4,"Santiago, Ñuñoa",2,100,3,3, true,vPivot,50);
         mercado.propiedades.put(2, cPivot);
         vPivot.propiedades.add(cPivot);
-        cPivot = new Casa(21000,1,1,"Valparaiso, San Felipe",3,68,2,1, true,vPivot);
+        cPivot = new Casa(21000,1,1,"Valparaiso, San Felipe",3,68,2,1, true,vPivot,10);
         mercado.propiedades.put(3, cPivot);
         vPivot.propiedades.add(cPivot); 
         Departamento dPivot = new Departamento(28000,2,2,"Valparaiso, Reñaca",4,60,3,1,4, true,vPivot);
@@ -36,7 +36,7 @@ public class Main {
         vPivot = new Vendedor("Jefte Ponce","20.048.542-k",2,64967789,"jefte.ponce@gmail.com","avatar12",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
-        cPivot = new Casa(20000,3,3,"Concepcion, San Pedro",5,68,2,2, true,vPivot);
+        cPivot = new Casa(20000,3,3,"Concepcion, San Pedro",5,68,2,2, true,vPivot,50);
         mercado.propiedades.put(5, cPivot);
         vPivot.propiedades.add(cPivot);
         dPivot = new Departamento(26000,2,2,"Concepcion, Concepcion",7,65,3,1,11, true,vPivot);
@@ -52,7 +52,7 @@ public class Main {
         dPivot = new Departamento(19000,2,2,"Valparaiso, Valparaiso",17,65,1,1,14, true,vPivot);
         mercado.propiedades.put(17, dPivot);
         vPivot.propiedades.add(dPivot);
-        cPivot = new Casa(59000,2,4,"Valparaiso, Viña del Mar",19,122,3,2, true,vPivot);
+        cPivot = new Casa(59000,2,4,"Valparaiso, Viña del Mar",19,122,3,2, true,vPivot,15);
         mercado.propiedades.put(19, cPivot);
         vPivot.propiedades.add(cPivot);
         
@@ -64,7 +64,7 @@ public class Main {
         vPivot = new Vendedor("Angel Morales","20.527.112-4",4,89099912,"angel.morales@gmail.com","pescadorKFC",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
-        cPivot = new Casa(14000,1,2,"Valparaiso, San Antonio",6,50,1,1, true,vPivot);
+        cPivot = new Casa(14000,1,2,"Valparaiso, San Antonio",6,50,1,1, true,vPivot,29);
         mercado.propiedades.put(6, cPivot);
         vPivot.propiedades.add(cPivot);
         
@@ -77,7 +77,7 @@ public class Main {
         dPivot = new Departamento(38000,3,4,"Santiago, La Florida",18,84,2,1,3, true,vPivot);
         mercado.propiedades.put(18, dPivot);
         vPivot.propiedades.add(dPivot);
-        cPivot = new Casa(34000,2,3,"Los Rios, Valdivia",15,80,2,2, true,vPivot);
+        cPivot = new Casa(34000,2,3,"Los Rios, Valdivia",15,80,2,2, true,vPivot,50);
         mercado.propiedades.put(15, cPivot);
         vPivot.propiedades.add(cPivot);
         
@@ -87,7 +87,7 @@ public class Main {
         dPivot = new Departamento (20000,1,2,"Concepcion, Hualpen",20,54,2,1,3, true,vPivot);
         mercado.propiedades.put(20, dPivot);
         vPivot.propiedades.add(dPivot);
-        cPivot = new Casa(21000,1,2,"Coquimbo, La Serena",13,70,1,1, true,vPivot);
+        cPivot = new Casa(21000,1,2,"Coquimbo, La Serena",13,70,1,1, true,vPivot,25);
         mercado.propiedades.put(13, cPivot);
         vPivot.propiedades.add(cPivot);
         
@@ -101,7 +101,7 @@ public class Main {
         dPivot = new Departamento(90000,3,5,"Santiago, La Reina",9,130,3,2,15, true, vPivot);
         mercado.propiedades.put(9, dPivot);
         vPivot.propiedades.add(dPivot);
-        cPivot = new Casa(83000,3,6,"Santiago, Chicureo",12,180,3,3, true,vPivot);
+        cPivot = new Casa(83000,3,6,"Santiago, Chicureo",12,180,3,3, true,vPivot,250);
         mercado.propiedades.put(12, cPivot);
         vPivot.propiedades.add(cPivot);
         dPivot = new Departamento(57000,3,3,"Araucania, Pucon",16,100,3,1,6, true,vPivot);
@@ -111,7 +111,7 @@ public class Main {
         vPivot = new Vendedor("Francisco Leiva","18.721.140-4",8,53126662,"francisco.leiva@gmail.com","comunismoMorrissey",aPivot);
         mercado.vendedores.add(vPivot);
         aPivot.vendedores.add(vPivot);
-        cPivot = new Casa(9000,1,1,"Santiago, Cerro Navia",14,42,1,1, true,vPivot);
+        cPivot = new Casa(9000,1,1,"Santiago, Cerro Navia",14,42,1,1, true,vPivot,12);
         mercado.propiedades.put(14, cPivot);
         vPivot.propiedades.add(cPivot);
         dPivot = new Departamento(11000,1,1,"Rancagua, Mostazal",8,45,1,1,16, true,vPivot);

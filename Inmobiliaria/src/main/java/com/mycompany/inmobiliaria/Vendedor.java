@@ -24,7 +24,7 @@ public class Vendedor extends Cliente {
         int i=0;
         Casa cPivot;
         Departamento dPivot;
-        while(i< propiedades.size()){
+        while(i < propiedades.size()){
             if(propiedades.get(i) instanceof Casa){
                 cPivot = (Casa) propiedades.get(i);
                 System.out.println("================================");

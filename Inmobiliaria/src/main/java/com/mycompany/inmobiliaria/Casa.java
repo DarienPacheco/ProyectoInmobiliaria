@@ -4,17 +4,24 @@ import java.io.*;
 
 public class Casa extends Propiedad implements Disponibilidad{
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
+        private int terreno;
         
         
         
-        
-    public Casa( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos, boolean disponibilidad, Vendedor owner){
+    public Casa( int precio, int numBanos,int numPiezas, String direccion, int idPropiedad, int area, int zona,int pisos, boolean disponibilidad, Vendedor owner, int terreno){
         super( precio, numBanos, numPiezas, direccion, idPropiedad, area, zona, pisos, disponibilidad,owner);
-        
+        this.terreno = terreno;
     }
         public Casa(){
         super(0,0,0,null,0,0,0,0,false,null);
+        this.terreno=0;
     }
+        public void setTerreno(int terreno){
+            this.terreno = terreno;
+        }
+        public int getTerreno(){
+            return terreno;
+        }
     
     public void generarPrecio()throws IOException{
         int pEstimado;
@@ -39,6 +46,7 @@ public class Casa extends Propiedad implements Disponibilidad{
                 System.out.println("Desea cambiarlo por nuestro precio recomendado "+ pEstimado + "?");
                 System.out.println("1. Si y Salir.");
                 System.out.println("0. No y Salir");
+                //Hacer error string
                 opcion=Integer.parseInt(lector.readLine());
                 switch(opcion){
                     case 1: 

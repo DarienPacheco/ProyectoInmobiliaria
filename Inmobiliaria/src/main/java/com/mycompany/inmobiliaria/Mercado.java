@@ -156,6 +156,8 @@ public class Mercado implements Imprimable{
                 cPivot.setPisos(Integer.parseInt(lector.readLine()));
                 System.out.println("Favor ingrese el numero de la zona en la cual esta ubicada.");
                 cPivot.setZona(Integer.parseInt(lector.readLine()));
+                System.out.println("Favor ingrese el tamaño del terreno");
+                cPivot.setTerreno(Integer.parseInt(lector.readLine()));
                 //Debido al metodo que fue usado para generar id, no es necesaria la verificacion del lugar.
                 cPivot.setIdPropiedad(generarIdPropiedad());
                 cPivot.setDisponibilidad(true);
@@ -228,6 +230,8 @@ public class Mercado implements Imprimable{
                 cPivot.setPisos(Integer.parseInt(lector.readLine()));
                 System.out.println("Favor ingrese el numero de la zona en la cual esta ubicada.");
                 cPivot.setZona(Integer.parseInt(lector.readLine()));
+                System.out.println("Favor ingrese el tamaño del terreno");
+                cPivot.setTerreno(Integer.parseInt(lector.readLine()));
                 cPivot.setIdPropiedad(generarIdPropiedad());
                 cPivot.setDisponibilidad(true);
                 cPivot.setOwner(vPivot);
@@ -611,6 +615,7 @@ public class Mercado implements Imprimable{
                     System.out.println("Numero de Piezas: " + cPivot.getNumPiezas());
                     System.out.println("Numero de Baños: " + cPivot.getNumBanos());
                     System.out.println("Metros Cuadrados: " + cPivot.getArea());
+                    System.out.println("Terreno: " + cPivot.getTerreno());
                     System.out.println("Pisos: " + cPivot.getPisos());
                     System.out.println("Direccion: " + cPivot.getDireccion());
                     if(cPivot.isDisponibilidad()){
@@ -688,6 +693,7 @@ public class Mercado implements Imprimable{
                 System.out.println("5. Metros cuadrados");
                 System.out.println("6. Pisos");
                 System.out.println("7. Disponibilidad");
+                System.out.println("8. Terreno");
                 System.out.println("0. Salir");
                 iPivot = Integer.parseInt(lector.readLine());
                 switch(iPivot){
@@ -734,6 +740,9 @@ public class Mercado implements Imprimable{
                                 cPivot.setDisponibilidad(false);
                                 break;
                         }
+                    case 8:
+                        System.out.println("Favor ingrese el nuevo valor");
+                        cPivot.setTerreno(Integer.parseInt(lector.readLine()));
                 }
                 
             }

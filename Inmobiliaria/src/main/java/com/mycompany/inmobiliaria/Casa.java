@@ -28,13 +28,13 @@ public class Casa extends Propiedad implements Disponibilidad{
         int opcion=1;
         switch(getZona()){
             case 1:
-                pEstimado=250*getArea();
+                pEstimado=(200*getArea() + 50*getTerreno());
                 break;
             case 2:
-                pEstimado=350*getArea();
+                pEstimado=(300*getArea()+ 75*getTerreno());
                 break;
             case 3:
-                pEstimado=500*getArea();
+                pEstimado=(400*getArea()+150*getTerreno());
                 break;
             default:
                 System.out.println("No se ha podido calcular el valor de la casa");

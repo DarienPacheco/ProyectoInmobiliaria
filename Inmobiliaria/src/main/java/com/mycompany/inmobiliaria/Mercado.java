@@ -390,29 +390,32 @@ public class Mercado implements Imprimable{
     public String imprimir() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+    //Busca limitada, muestra todas las propiedades que sean o casas o departamentos,
     public void busquedaLimitada(int opcion){
-        int contador=1;
+        int i=1;
         Propiedad pPivot;
+        //En caso de la primera opcion muestra las Casas
         if(opcion==1){
-            while(contador<=propiedades.size()){
-                pPivot = propiedades.get(contador);
+            while(i<=propiedades.size()){
+                pPivot = propiedades.get(i);
                 if(pPivot instanceof Casa){
                     System.out.println("Casa : "+ pPivot.getIdPropiedad());
                     System.out.println("Dirección : " + pPivot.getDireccion());
                     System.out.println("Area : " + pPivot.getArea());
+                    System.out.println("Terreno : " + ((Casa) pPivot).getTerreno());
                     System.out.println("Numero Piezas : " + pPivot.getNumPiezas() );
                     System.out.println("Numero Baños : " + pPivot.getNumBanos());
                     System.out.println("Precio : " + pPivot.getPrecio());
                     System.out.println("Disponibilidad : " + pPivot.isDisponibilidad());
                     System.out.println("-----------------------------------");
                 }
-                contador++;
+                i++;
             }
             return;
         }else if(opcion==2){
-            while(contador<=propiedades.size()){
-                pPivot = propiedades.get(contador);
+            //En caso contrario muestra los deptos
+            while(i<=propiedades.size()){
+                pPivot = propiedades.get(i);
                 if(pPivot instanceof Departamento){
                     System.out.println("Casa : "+ pPivot.getIdPropiedad());
                     System.out.println("Dirección : " + pPivot.getDireccion());
@@ -423,30 +426,33 @@ public class Mercado implements Imprimable{
                     System.out.println("Disponibilidad : " + pPivot.isDisponibilidad());
                     System.out.println("-----------------------------------");
                 }
-                contador++;
+                i++;
             }
             return;
         }
         System.out.println("El valor ingresado no esta dentro de los aceptados.");
         return;
     }
-    
+    //Busca la propiedad con el precio mas bajo actualmente
     public void ganga(){
-        int contador=1;
+        int i=1;
         int ganga=0;
-        Propiedad pPivot,pIdeal=propiedades.get(contador);
-        while(contador<=propiedades.size()){
-            pPivot= propiedades.get(contador);
-            
-            if(contador == 1){
+        Propiedad pPivot,pIdeal=propiedades.get(i);
+        //Loop que pasa por todas las propiedades
+        while(i<=propiedades.size()){
+            pPivot= propiedades.get(i);
+            //Toma el primer valor existente
+            if(i == 1){
                 ganga=pPivot.getPrecio();
             }
+            //Compara valores remplazando en caso de encontrar un precio menor
             if(pPivot.getPrecio()<=ganga){
                 ganga=pPivot.getPrecio();
                 pIdeal=pPivot;
             }
-           contador++;
+           i++;
         }
+        //Imprime el resultado.
         System.out.println("TE RECOMENDAMOS!!!!!!!!!!!!!:");
         System.out.println("Propiedad : "+ pIdeal.getIdPropiedad());
         System.out.println("Dirección : " + pIdeal.getDireccion());
@@ -463,7 +469,7 @@ public class Mercado implements Imprimable{
         String sPivot;
         System.out.println("Favor ingrese el id del vendedor a modificar");
         Vendedor vPivot = buscarVendedor(Integer.parseInt(lector.readLine()));
-        
+        //Loop que permite modificar individualmente las variables de los vendedores. Exceptuando id.
         while(iPivot!=0){
             System.out.println("Favor seleccione el valor que quiere modificar");
             System.out.println("1. Nombre");
@@ -472,7 +478,6 @@ public class Mercado implements Imprimable{
             System.out.println("4. Mail");
             System.out.println("5. Contraseña");
             System.out.println("0. Salir");
-            //Poner aca el mostrar Vendedor.
             iPivot = Integer.parseInt(lector.readLine());
             switch(iPivot){
                 default:
@@ -517,7 +522,7 @@ public class Mercado implements Imprimable{
         String sPivot;
         System.out.println("Favor ingrese el id del vendedor a modificar");
         Asesor aPivot = buscarAsesor(Integer.parseInt(lector.readLine()));
-        
+        //Loop que permite modificar individualmente las variables de Asesor, exceptuando id.
         while(iPivot!=0){
             System.out.println("Favor seleccione el valor que quiere modificar");
             System.out.println("1. Nombre");
@@ -527,7 +532,6 @@ public class Mercado implements Imprimable{
             System.out.println("5. Disponibilidad");
             System.out.println("6. Clasificacion");
             System.out.println("0. Salir");
-            //Poner aca el mostrar Vendedor.
             iPivot = Integer.parseInt(lector.readLine());
             switch(iPivot){
                 default:
@@ -653,7 +657,7 @@ public class Mercado implements Imprimable{
             }
         }
     }
-    
+    //Funciona de la misma manera que mostrarVendedores.
     public void mostrarAsesores(){
         Asesor aPivot;
         int i=0;
@@ -684,6 +688,7 @@ public class Mercado implements Imprimable{
         if(propiedades.get(Integer.parseInt(sPivot)) instanceof Casa){
             //La zona no es una variable que consideramos cambiable, porque eso indicaria otra propiedad, en cambio la direccion puede cambiar el nombre de la calle.
             Casa cPivot = (Casa) propiedades.get(Integer.parseInt(sPivot));
+            //Loop que permite modificar las variables de una propiedad sea casa o departamento, exceptuando el id ya que este cuenta como clave para su busqueda en el mapa.
             while(iPivot!= 0){
                 System.out.println("Favor seleccione la variable a modificar.");
                 System.out.println("1. Precio");

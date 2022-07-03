@@ -96,7 +96,7 @@ public class Asesor implements Imprimable, Disponibilidad{
         return this.nombre + " - " + this.rut + " - " + this.clasificacion + " - " + this.disponibilidad + " - " + this.mail;
     }
 
-    
+    //Permite reservar al asesor, cambiando su estado.
     public void reservar(){
         if(isDisponibilidad()== noDisp){
             System.out.println("El Asesor no se encuentra disponible.");
@@ -123,17 +123,17 @@ public class Asesor implements Imprimable, Disponibilidad{
                 i++; 
             }  
         }
+        //En caso de no encontrarlo, avisa.
         System.out.println("Vendedor no encontrado");
         return null;
     }
-    
+    //Elimina un vendedor de la lista de vendedores del asesor
     public Vendedor eliminarVendedor(int id){
         Vendedor vPivot = null;
         int i=0;
-        System.out.println("Tamaño vendedores:" + getNombre());
+        //hace un loop buscando encontrar el id ingresado, en caso de encontrarlo avisa y lo elimina
         while(i<vendedores.size()){
             vPivot = vendedores.get(i);
-            System.out.println(id);
             System.out.println(vPivot.getIdCliente());
             if(vPivot.getIdCliente() == id){
                 System.out.println("Rut encontrado");
@@ -144,6 +144,7 @@ public class Asesor implements Imprimable, Disponibilidad{
                 i++;
             }
         }
+        //En caso de no existir el id dentro de la lista, avisa que no se encontro y se acaba.
         System.out.println("Vendedor no encontrado");
         return null;
     }

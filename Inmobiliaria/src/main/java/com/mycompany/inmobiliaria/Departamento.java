@@ -26,7 +26,7 @@ public class Departamento extends Propiedad implements Disponibilidad{
         this.planta = planta;
     }
     
-    
+    //Al igual que en casa calcula el valor recomendado por nosotros para el departamento.
     public void generarPrecio()throws IOException{
             int pEstimado;
             int opcion=1;
@@ -44,6 +44,7 @@ public class Departamento extends Propiedad implements Disponibilidad{
                     System.out.println("No se ha podido calcular el valor de la casa");
                     return;
             }
+            //Se muestra el precio recomendado y permite al usuario decidir si lo reemplaza o no.
             while (opcion!=0){
                 if(getPrecio()!=pEstimado){
                     System.out.println("El valor del Departamento es diferente a nuestras recomendaciones :"+getPrecio() );
@@ -68,7 +69,7 @@ public class Departamento extends Propiedad implements Disponibilidad{
                 }
             }
         }
-
+    //Reserva el departamento para su visita.
     public void reservar(){
         if(isDisponibilidad()== noDisp){
             System.out.println("El departamento no se encuentra disponible.");

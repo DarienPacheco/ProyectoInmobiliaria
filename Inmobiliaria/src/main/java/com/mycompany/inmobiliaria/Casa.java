@@ -22,10 +22,11 @@ public class Casa extends Propiedad implements Disponibilidad{
         public int getTerreno(){
             return terreno;
         }
-    
+    //Funcion que permite generar un precio recomendado para las variables de mayor importancia de la casa
     public void generarPrecio()throws IOException{
         int pEstimado;
         int opcion=1;
+        //La zona indica el precio generar del terreno y el tamaño de la casa.
         switch(getZona()){
             case 1:
                 pEstimado=(200*getArea() + 50*getTerreno());
@@ -40,13 +41,13 @@ public class Casa extends Propiedad implements Disponibilidad{
                 System.out.println("No se ha podido calcular el valor de la casa");
                 return;
         }
+        //Muestra cual es el precio que recomendamos y pregunta si se desea remplazar
         while (opcion!=0){
             if(getPrecio()!=pEstimado){
                 System.out.println("El valor de la Casa es diferente a nuestras recomendaciones :"+getPrecio() );
                 System.out.println("Desea cambiarlo por nuestro precio recomendado "+ pEstimado + "?");
                 System.out.println("1. Si y Salir.");
                 System.out.println("0. No y Salir");
-                //Hacer error string
                 opcion=Integer.parseInt(lector.readLine());
                 switch(opcion){
                     case 1: 
@@ -60,6 +61,7 @@ public class Casa extends Propiedad implements Disponibilidad{
                         break;
                 }
             }else{
+                //En caso de que el precio sea el recomendado entrega el siguiente mensaje.
                 System.out.println("El precio de la Casa es ideal segun nuestros criterios.");
                 return;
             }
